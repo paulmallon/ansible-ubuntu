@@ -32,9 +32,10 @@
 
 | Tag | Roles
 |-----|----------------
-|base | ssh, common
-|desktop| spotify, code, teams, steam, intelij
+|base | ssh, common, dotfiles
+|desktop| spotify, teams, steam
 |dev| code, intelij
+
 
 
 Example command
