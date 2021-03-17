@@ -29,9 +29,9 @@
 
 ## Tags description
 
-| Tag | Description 
+| Tag | Roles
 |-----|----------------
-|base | ssh and common
+|base | ssh, common
 |desktop| spotify, code, teams, steam, intelij
 |dev| code, intelij
 
