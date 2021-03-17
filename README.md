@@ -17,7 +17,7 @@
 
 | Role                     | Description  
 |--------------------------|----------------------------------------------
-|common                    | Install some usefull packages
+|common                    | Install some usefull packages (see list below)
 |ssh                       | OpenSSH server
 |spotify                   | Spoitfy 
 |code                      | Visual Studio Code
@@ -39,3 +39,40 @@
 Example command
 
     ansible-playbook ansible-desktop.yml --tags <sometag>
+
+
+
+## Common packages
+
+ - build-essential
+  - curl
+  - diffutils
+  - git
+  - grep
+  - gzip
+  - htop
+  - iotop
+  - less
+  - make
+  - nano
+  - nmap
+  - openssl
+  - rar
+  - rsync
+  - software-properties-common
+  - tar
+  - unzip
+  - vim
+  - wget
+  - whois
+  - zip
+  - stress
+  - s-tui
+  - iputils-ping 
+  - net-tools
+  - powertop
+  - nmon
+  - iptraf-ng
+  - jq
+  - dnsutils
+  - solaar
