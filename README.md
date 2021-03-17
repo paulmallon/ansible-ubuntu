@@ -1,4 +1,4 @@
-# Ansible-Ubuntu - Ansible roles to setup Ubuntu desktop
+# Ansible roles to setup Ubuntu desktop
 
  ## Prerequisite
 
@@ -36,6 +36,6 @@
 |dev| code, intelij
 
 
-Examnple command
+Example command
 
     ansible-playbook ansible-desktop.yml --tags <sometag>
