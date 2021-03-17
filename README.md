@@ -24,6 +24,7 @@
 |teams                     | Microsoft Teams
 |intelij                   | Jetbrains InteliJ
 |steam                     | Steam
+|dotfiles                  | git tracking of configuration files 
 
 
 
