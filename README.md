@@ -24,7 +24,7 @@
 |teams                     | Microsoft Teams
 |intelij                   | Jetbrains InteliJ
 |steam                     | Steam
-|dotfiles                  | git tracking of configuration files 
+|dotfiles                  | Git tracking of configuration files 
 
 
 
@@ -46,7 +46,7 @@ Example command
 
 ## Common packages
 
- - build-essential
+  - build-essential
   - curl
   - diffutils
   - git
@@ -78,3 +78,4 @@ Example command
   - jq
   - dnsutils
   - solaar
+  - cpupower-gui

@@ -11,7 +11,7 @@
 - name: Enable all repositories in sources.list
   replace: dest=/etc/apt/sources.list regexp='^#\s?deb(.+)http://(.+)/ubuntu(.+)$' replace='deb\1http://\2/ubuntu\3' backup=yes
 
-- name: "Install common packages"
+- name: Install common packages
   apt:
     update_cache: yes
     cache_valid_time: '{{ aptcachetime }}'
@@ -49,6 +49,7 @@
       - jq
       - dnsutils
       - solaar
+      - cpupower-gui
 
 - name: Upgrade installed packages
   apt: upgrade=yes
