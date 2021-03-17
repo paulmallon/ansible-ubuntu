@@ -1,20 +1,15 @@
-- name: Update Apt cache
-  apt:
-    update_cache: yes
+---
 
 - name: Install Java 15 JDK and JRE
   apt:
+    update_cache: yes
+    autoremove: yes
+    autoclean: yes
     cache_valid_time: '{{ aptcachetime }}'
     state: latest
     pkg:
       - openjdk-15-jre
       - openjdk-15-jdk
-      
-- name: Remove useless packages from the cache
-  apt:
-    autoclean: yes
-
-- name: Remove dependencies that are no longer required
-  apt:
-    autoremove: yes
+    
+    
     
