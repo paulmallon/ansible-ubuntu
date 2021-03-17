@@ -9,7 +9,7 @@
     git clone git@github.com:paulmallon/ansible-ubuntu.git
     cd ansible-ubuntu
     ./install.sh
-    ansible-playbook ansible-desktop.yml
+    ansible-playbook ansible-desktop.yml --ask-become-pass
 
 
 
@@ -23,7 +23,7 @@
 |code                      | Visual Studio Code
 |teams                     | Microsoft Teams
 |intelij                   | Jetbrains InteliJ
-|steam                     | Steam
+|java                      | Java 15 JDK and JRE 
 |dotfiles                  | Git tracking of configuration files 
 
 
@@ -33,8 +33,8 @@
 | Tag | Roles
 |-----|----------------
 |base | ssh, common, dotfiles
-|desktop| spotify, teams, steam
-|dev| code, intelij
+|desktop| spotify, teams
+|dev| code, intelij, java
 
 
 

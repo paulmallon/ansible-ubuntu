@@ -1,7 +1,0 @@
-- name: "Install Steam"
-  apt:
-    update_cache: yes
-    cache_valid_time: '{{ aptcachetime }}'
-    state: latest
-    pkg:
-      - steam
