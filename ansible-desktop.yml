@@ -9,3 +9,4 @@
     - { role: teams, become: true, tags: [desktop] }
     - { role: steam, become: true, tags: [desktop] }
     - { role: intelij, become: true, tags: [desktop, dev] }
+    - { role: dotfiles, become: false, tags: [base, dotfiles] }

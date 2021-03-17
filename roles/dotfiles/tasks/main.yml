@@ -1,0 +1,13 @@
+---
+
+- name: Clone cfg repo
+  ansible.builtin.git:
+    repo: 'git@github.com:paulmallon/cfg.git'
+    dest: "{{ lookup('env','HOME') }}/.cfg"
+    bare: yes
+
+- name: Configure repository status.showUntrackedFiles no
+  shell: /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME config status.showUntrackedFiles no
+
+- name: Checkout repository
+  shell: /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME checkout --force
