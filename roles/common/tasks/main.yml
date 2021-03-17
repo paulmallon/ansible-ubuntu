@@ -1,0 +1,63 @@
+---
+
+- name: Ensure the system can use the HTTPS transport for APT
+  stat: path=/usr/lib/apt/methods/https
+  register: apt_https_transport
+
+- name: Install HTTPS transport for APT
+  apt: pkg=apt-transport-https state=installed
+  when: not apt_https_transport.stat.exists
+
+- name: Enable all repositories in sources.list
+  replace: dest=/etc/apt/sources.list regexp='^#\s?deb(.+)http://(.+)/ubuntu(.+)$' replace='deb\1http://\2/ubuntu\3' backup=yes
+
+- name: "Install common packages"
+  apt:
+    update_cache: yes
+    cache_valid_time: '{{ aptcachetime }}'
+    state: latest
+    pkg:
+      - build-essential
+      - curl
+      - diffutils
+      - git
+      - grep
+      - gzip
+      - htop
+      - iotop
+      - less
+      - make
+      - nano
+      - nmap
+      - openssl
+      - rar
+      - rsync
+      - software-properties-common
+      - tar
+      - unzip
+      - vim
+      - wget
+      - whois
+      - zip
+      - stress
+      - s-tui
+      - iputils-ping 
+      - net-tools
+      - powertop
+      - nmon
+      - iptraf-ng
+      - jq
+      - dnsutils
+      - solaar
+
+- name: Upgrade installed packages
+  apt: upgrade=yes
+
+- name: Remove useless packages from the cache
+  apt:
+    autoclean: yes
+
+- name: Remove dependencies that are no longer required
+  apt:
+    autoremove: yes
+    

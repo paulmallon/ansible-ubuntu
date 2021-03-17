@@ -1,0 +1,22 @@
+---
+
+- name: Add Micorsoft Apt Keys
+  apt_key:
+    url: https://packages.microsoft.com/keys/microsoft.asc
+    state: present
+
+- name: Add VS Code repo
+  become: yes
+  apt_repository:
+    repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main'
+    filename: vscode
+    state: present
+  
+- name: Install VS Code
+  apt:
+    update_cache: true
+    install_recommends: yes 
+    cache_valid_time: '{{ aptcachetime }}'
+    state: latest
+    pkg:
+      - code

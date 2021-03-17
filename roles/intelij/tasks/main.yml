@@ -1,0 +1,4 @@
+- name: Install Intellij Idea Community
+  snap:
+    name: intellij-idea-community
+    classic: yes

@@ -1,0 +1,18 @@
+---
+
+- name: Add Spotify Apt Keys
+  apt_key:
+    url: https://download.spotify.com/debian/pubkey_0D811D58.gpg
+    state: present
+
+- name: Add repository
+  apt_repository: repo="deb http://repository.spotify.com stable non-free"
+
+- name: Install Spotify
+  apt:
+    update_cache: yes
+    install_recommends: yes
+    cache_valid_time: '{{ aptcachetime }}'
+    state: latest
+    pkg:
+      - spotify-client
