@@ -1,13 +1,35 @@
 ---
 
-- name: Install SSH Server
-  apt: pkg=openssh-server state=latest cache_valid_time={{ aptcachetime }}
+- name: Update Apt cache
+  apt:
+    update_cache: yes
 
+- name: Install OpenSSH server
+  apt:
+    cache_valid_time: '{{ aptcachetime }}'
+    state: latest
+    pkg:
+      - openssh-server
+      - openjdk-15-jdk
+      
+- name: Remove useless packages from the cache
+  apt:
+    autoclean: yes
+
+- name: Remove dependencies that are no longer required
+  apt:
+    autoremove: yes
+    
 - name: "{{ ssh.password_auth | ternary('Allow','Disallow') }} password authentication"
   lineinfile: dest=/etc/ssh/sshd_config regexp="^PasswordAuthentication" line="PasswordAuthentication {{ ssh.password_auth | ternary('yes','no') }}" state=present
 
 - name: "{{ ssh.root_login | ternary('Allow','Disallow') }} root SSH access"
   lineinfile: dest=/etc/ssh/sshd_config regexp="^PermitRootLogin" line="PermitRootLogin {{ ssh.root_login | ternary('yes','no') }}" state=present
 
-- name: "Ensure SSH is {{ ssh.start | ternary('started','stopped') }}"
-  service: name=ssh state={{ ssh.start | ternary('restarted','stopped') }} enabled={{ ssh.service_enabled }}
+- name: "Ensure SSH service state is {{ ssh.start | ternary('started','stopped') }}"
+  ansible.builtin.service:
+    name: ssh
+    #state: "{{ ssh.start | ternary('started','stopped') }}"
+    state: "{{ ssh.start | ternary('restarted','stopped') }}"
+    enabled: "{{ ssh.service_enabled }}"
+    
