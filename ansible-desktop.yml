@@ -4,7 +4,7 @@
   roles:
     - { role: common, become: true, tags: [base] }
     - { role: ssh, become: true, tags: [base, ssh]}
-    - { role: spotify, become: true, tags: [desktop, spotify] }
+    - { role: spotify, become: true, tags: [desktop] }
     - { role: code, become: true, tags: [desktop, dev] }
     - { role: teams, become: true, tags: [desktop] }
     - { role: steam, become: true, tags: [desktop] }
