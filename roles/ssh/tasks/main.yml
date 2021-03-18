@@ -36,7 +36,7 @@
     state: "{{ ssh.start | ternary('restarted','stopped') }}"
     enabled: "{{ ssh.service_enabled }}"
 
-- name: Generate SSH key "{{ssh_key_filename}}"
+- name: "Generate SSH key '{{ lookup('env','HOME') + '/.ssh/id_rsa' }}'"
   openssh_keypair:
     path: "{{ lookup('env','HOME') + '/.ssh/id_rsa' }}"
     type: rsa
