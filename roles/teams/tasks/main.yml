@@ -8,7 +8,7 @@
 - name: Add Teams repo
   apt_repository:
     repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/ms-teams stable main'
-    filename: vscode
+    filename: teams
     state: present
   
 - name: Install Teams
