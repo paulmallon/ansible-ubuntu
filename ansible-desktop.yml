@@ -6,6 +6,7 @@
     - { role: common, become: true, tags: [base, common] }
     - { role: ssh, become: true, tags: [base, ssh]}
     - { role: dotfiles, become: false, tags: [base, dotfiles] }
+    - { role: ufw, become: true, tags: [base, ufw] }
     # Desktop
     - { role: spotify, become: true, tags: [desktop, spotify] }
     - { role: teams, become: true, tags: [desktop, teams] }

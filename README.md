@@ -17,14 +17,15 @@
 
 | Role                     | Description  
 |--------------------------|----------------------------------------------
-|common                    | Common packages (see list below)
-|ssh                       | OpenSSH server and SSH key generation
-|spotify                   | Spoitfy 
-|code                      | Visual Studio Code
-|teams                     | Microsoft Teams
-|intelij                   | Jetbrains InteliJ
-|java                      | OpenJDK 15 - Development Kit and Runtime
-|dotfiles                  | Git tracking of configuration files 
+|common                    | Install common packages (see list below)
+|ssh                       | Install OpenSSH server and generate SSH key
+|ufw                       | Enable Uncomplicated Firewall and allow OpenSSH server
+|spotify                   | Install Spoitfy 
+|code                      | Install Visual Studio Code
+|teams                     | Install Microsoft Teams
+|intelij                   | Install Jetbrains InteliJ
+|java                      | Install  OpenJDK 15 - Development Kit and Runtime
+|dotfiles                  | Enable git tracking of configuration files 
 
 
 
@@ -32,7 +33,7 @@
 
 | Tag | Roles
 |-----|----------------
-|base | ssh, common, dotfiles
+|base | ssh, common, dotfiles, ufw
 |desktop| spotify, teams
 |dev| code, intelij, java
 
