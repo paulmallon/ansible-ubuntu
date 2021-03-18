@@ -6,10 +6,16 @@
 
 
 ## Installation
+    
+Install ansible and run playbook
     git clone git@github.com:paulmallon/ansible-ubuntu.git
     cd ansible-ubuntu
     ./install.sh
-    ansible-playbook ansible-desktop.yml --ask-become-pass
+    ansible-playbook local.yml --ask-become-pass
+
+Run playbook with ansible-pull
+    ansible-pull -U git@github.com:paulmallon/ansible-ubuntu.git
+
 
 
 
