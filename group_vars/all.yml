@@ -1,6 +1,10 @@
 ---
 
-aptcachetime: 3600
+apt:
+  autoremove: yes
+  autoclean: yes
+  update_cache: yes
+  cachetime: 3600
 ssh:
   start: true
   service_enabled: true
@@ -8,4 +12,5 @@ ssh:
   root_login: false
 dotfiles:
   repourl: git@github.com:paulmallon/cfg.git
+
   

@@ -2,11 +2,11 @@
 
 - name: Install Java 15 JDK and JRE
   apt:
-    update_cache: yes
-    autoremove: yes
-    autoclean: yes
-    cache_valid_time: '{{ aptcachetime }}'
     state: latest
+    cache_valid_time: '{{ apt.cachetime }}'
+    autoclean: '{{ apt.autoclean }}'
+    autoremove: '{{ apt.autoremove }}'
+    update_cache: '{{ apt.update_cache }}'
     pkg:
       - openjdk-15-jre
       - openjdk-15-jdk

@@ -1,13 +1,12 @@
 ---
 
-- name: Update Apt cache
-  apt:
-    update_cache: yes
-
 - name: Install common packages
   apt:
-    cache_valid_time: '{{ aptcachetime }}'
     state: latest
+    cache_valid_time: '{{ apt.cachetime }}'
+    autoclean: '{{ apt.autoclean }}'
+    autoremove: '{{ apt.autoremove }}'
+    update_cache: '{{ apt.update_cache }}'
     pkg:
       - build-essential
       - curl
@@ -43,12 +42,3 @@
       - solaar
       - cpupower-gui
       - nomad
-
-- name: Remove useless packages from the cache
-  apt:
-    autoclean: yes
-
-- name: Remove dependencies that are no longer required
-  apt:
-    autoremove: yes
-    

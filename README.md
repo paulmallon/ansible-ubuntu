@@ -17,13 +17,13 @@
 
 | Role                     | Description  
 |--------------------------|----------------------------------------------
-|common                    | Install some usefull packages (see list below)
-|ssh                       | OpenSSH server
+|common                    | Common packages (see list below)
+|ssh                       | OpenSSH server and SSH key generation
 |spotify                   | Spoitfy 
 |code                      | Visual Studio Code
 |teams                     | Microsoft Teams
 |intelij                   | Jetbrains InteliJ
-|java                      | Java 15 JDK and JRE 
+|java                      | OpenJDK 15 - Development Kit and Runtime
 |dotfiles                  | Git tracking of configuration files 
 
 
@@ -79,3 +79,4 @@ Example command
   - dnsutils
   - solaar
   - cpupower-gui
+  - nomad

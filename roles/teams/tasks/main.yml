@@ -6,7 +6,6 @@
     state: present
 
 - name: Add Teams repo
-  become: yes
   apt_repository:
     repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/ms-teams stable main'
     filename: vscode
@@ -14,9 +13,10 @@
   
 - name: Install Teams
   apt:
-    update_cache: true
-    install_recommends: yes 
-    cache_valid_time: '{{ aptcachetime }}'
     state: latest
+    cache_valid_time: '{{ apt.cachetime }}'
+    autoclean: '{{ apt.autoclean }}'
+    autoremove: '{{ apt.autoremove }}'
+    update_cache: '{{ apt.update_cache }}'
     pkg:
       - teams
