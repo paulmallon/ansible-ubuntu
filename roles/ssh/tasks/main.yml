@@ -7,17 +7,55 @@
     state: latest
     pkg:
       - openssh-server
-      - openjdk-15-jdk
-          
-- name: "{{ ssh.password_auth | ternary('Allow','Disallow') }} password authentication"
-  lineinfile: dest=/etc/ssh/sshd_config regexp="^PasswordAuthentication" line="PasswordAuthentication {{ ssh.password_auth | ternary('yes','no') }}" state=present
 
+- name: "{{ ssh.password_auth | ternary('Allow','Disallow') }} password authentication"
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^PasswordAuthentication'
+    line: "PasswordAuthentication {{ ssh.password_auth | ternary('yes','no') }}"
+    state: present
+    backup: yes
+    
 - name: "{{ ssh.root_login | ternary('Allow','Disallow') }} root SSH access"
-  lineinfile: dest=/etc/ssh/sshd_config regexp="^PermitRootLogin" line="PermitRootLogin {{ ssh.root_login | ternary('yes','no') }}" state=present
+  lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^PermitRootLogin'
+        line: "PermitRootLogin {{ ssh.root_login | ternary('yes','no') }}"
+        state: present
+        backup: yes
+  notify:
+    - restart ssh
+
+- name: Generate SSH key "{{ssh_key_filename}}"
+  openssh_keypair:
+    path: "{{ lookup('env','HOME') + '/.ssh/id_rsa' }}"
+    type: rsa
+    size: 4096
+    state: present
+    force: no
+
+- name: Set authorized key for user {{ lookup('env', 'USER') }} copying it from user {{ lookup('env', 'USER') }}
+  authorized_key:
+    user: "{{ lookup('env', 'USER') }}"
+    key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
+    state: present
+
+- name: "Ensure file permissions on '{{ lookup('env','HOME') + '/.ssh/' }}'"
+  file:
+    path: "{{ lookup('env','HOME') + '/.ssh/id_rsa.pub' }}"
+    owner: "{{ lookup('env', 'USER') }}"
+    group: "{{ lookup('env', 'USER') }}"
+    mode: 0755
+
+- name: "Ensure file permissions on '{{ lookup('env','HOME') + '/.ssh/id_rsa.pub' }}'"
+  file:
+    path: "{{ lookup('env','HOME') + '/.ssh/id_rsa.pub' }}"
+    owner: "{{ lookup('env', 'USER') }}"
+    group: "{{ lookup('env', 'USER') }}"
+    mode: 0644
 
 - name: "Ensure SSH service state is {{ ssh.start | ternary('started','stopped') }}"
   ansible.builtin.service:
     name: ssh
     state: "{{ ssh.start | ternary('restarted','stopped') }}"
     enabled: "{{ ssh.service_enabled }}"
-    
