@@ -15,6 +15,8 @@
     line: "PasswordAuthentication {{ ssh.password_auth | ternary('yes','no') }}"
     state: present
     backup: yes
+  notify:
+    - restart ssh
     
 - name: "{{ ssh.root_login | ternary('Allow','Disallow') }} root SSH access"
   lineinfile:
@@ -26,6 +28,12 @@
   notify:
     - restart ssh
 
+- name: "Ensure SSH service state is {{ ssh.start | ternary('started','stopped') }}"
+  ansible.builtin.service:
+    name: ssh
+    state: "{{ ssh.start | ternary('restarted','stopped') }}"
+    enabled: "{{ ssh.service_enabled }}"
+    
 - name: Generate SSH key "{{ssh_key_filename}}"
   openssh_keypair:
     path: "{{ lookup('env','HOME') + '/.ssh/id_rsa' }}"
@@ -54,8 +62,3 @@
     group: "{{ lookup('env', 'USER') }}"
     mode: 0644
 
-- name: "Ensure SSH service state is {{ ssh.start | ternary('started','stopped') }}"
-  ansible.builtin.service:
-    name: ssh
-    state: "{{ ssh.start | ternary('restarted','stopped') }}"
-    enabled: "{{ ssh.service_enabled }}"
