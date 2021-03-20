@@ -89,3 +89,6 @@ Example command
   - solaar
   - cpupower-gui
   - nomad
+  - lm-sensors
+  - remmina
+  - tldr

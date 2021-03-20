@@ -42,6 +42,9 @@
       - solaar
       - cpupower-gui
       - nomad
+      - lm-sensors
+      - remmina
+      - tldr
 
 - name: "Configure git pull.{{ git.pull }}"
   shell: "git config --global pull.{{ git.pull }}"
