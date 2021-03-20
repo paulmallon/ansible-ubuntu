@@ -15,6 +15,7 @@ Install ansible and run playbook
     ansible-playbook local.yml --ask-become-pass
 
 Run playbook with ansible-pull
+
     ansible-pull -U git@github.com:paulmallon/ansible-ubuntu.git
 
 
