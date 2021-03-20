@@ -12,5 +12,10 @@ ssh:
   root_login: false
 dotfiles:
   repourl: git@github.com:paulmallon/cfg.git
+git:
+  user: "PM"
+  email: "paul.james.mallon@gmail.com"
+  pull: "ff only"
+  push: origin
 
   

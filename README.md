@@ -25,7 +25,7 @@ Run playbook with ansible-pull
 
 | Role                     | Description  
 |--------------------------|----------------------------------------------
-|common                    | Install common packages (see list below)
+|common                    | Install common packages (see list below) and misc configuration
 |ssh                       | Install OpenSSH server and generate SSH key
 |ufw                       | Enable Uncomplicated Firewall and allow OpenSSH server
 |spotify                   | Install Spoitfy 

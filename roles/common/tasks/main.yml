@@ -1,6 +1,6 @@
 ---
 
-- name: Install common packages
+- name: Install packages
   apt:
     state: latest
     cache_valid_time: '{{ apt.cachetime }}'
@@ -42,3 +42,15 @@
       - solaar
       - cpupower-gui
       - nomad
+
+- name: "Configure git pull.{{ git.pull }}"
+  shell: "git config --global pull.{{ git.pull }}"
+
+- name: "Configre git user {{ git.user }} "
+  shell: "git config --global user.name {{ git.user }}"
+
+- name: "Configre git email {{ git.user }}"
+  shell: "git config --global user.email {{ git.user }}"
+
+- name: "Configure git push.default {{git.push }}"
+  shell: "git config --global push.default {{ git.push }}"
