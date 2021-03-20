@@ -8,6 +8,7 @@
 ## Installation
     
 Install ansible and run playbook
+
     git clone git@github.com:paulmallon/ansible-ubuntu.git
     cd ansible-ubuntu
     ./install.sh
