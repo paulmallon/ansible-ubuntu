@@ -42,3 +42,11 @@
     when:
       - task_failed is not defined
       - healthcheck_uuid is defined
+
+ - name: post-run | send failure alert
+    tags: always
+    uri:
+      url: https://hc-ping.com/{{ healthcheck_uuid }}/fail
+    when:
+      - task_failed is defined
+      - task_failed == true
