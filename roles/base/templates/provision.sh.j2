@@ -5,7 +5,7 @@ ANSIBLEUSER="{{ ansible.user }}"
 BRANCH="{{ branch | default('main') }}"
 LOGFILE="/var/log/ansible.log"
 REPO="{{ ansible.repourl }}"
-VAULT_KEY="</path/to/ansible_vault_key>"
+VAULT_KEY="/dev/null"
 PRECMD="sudo systemd-inhibit --who='ansible-pull' --why='provisioning'"
 
 # check if ansible-pull is already running, and if not, run it
