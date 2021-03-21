@@ -7,3 +7,4 @@
   - import_tasks: software/java.yml
   - import_tasks: software/spotify.yml
   - import_tasks: software/teams.yml
+  - import_tasks: software/signal.yml
