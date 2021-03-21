@@ -16,6 +16,6 @@ git:
   user: "PM"
   email: "paul.james.mallon@gmail.com"
   pull: "ff only"
-  push: origin
+  push: upstream
 
   

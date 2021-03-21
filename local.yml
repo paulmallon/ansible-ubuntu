@@ -1,17 +1,51 @@
 ---
 
-- hosts: all  
-  roles:
-    # Base
-    - { role: common, become: true, tags: [base, common] }
-    - { role: ssh, become: true, tags: [base, ssh]}
-    - { role: dotfiles, become: false, tags: [base, dotfiles] }
-    - { role: ufw, become: true, tags: [base, ufw] }
-    # Desktop
-    - { role: spotify, become: true, tags: [desktop, spotify] }
-    - { role: teams, become: true, tags: [desktop, teams] }
-    # Dev
-    - { role: code, become: true, tags: [dev, code] }
-    - { role: intelij, become: true, tags: [dev, intelij] }
-    - { role: java, become: true, tags: [dev, java] }
+- hosts: all
+  tags: always
+  become: true
+  pre_tasks:
+    - name: pre-run | update apt cache 
+      tags: always
+      apt: 
+        update_cache: '{{ apt.update_cache }}'
+      changed_when: False
+      when: ansible_distribution in ["Debian", "Ubuntu"]
 
+
+- hosts: all
+  tags: base
+  become: true
+  roles:
+    - base
+
+- hosts: all
+  tags: workstation
+  become: true
+  roles:
+    - workstation
+
+#- hosts: all  
+#  roles:
+    # Base
+#    - { role: common, become: true, tags: [base, common] }
+#    - { role: ssh, become: true, tags: [base, ssh]}
+#    - { role: dotfiles, become: false, tags: [base, dotfiles] }
+#    - { role: ufw, become: true, tags: [base, ufw] }
+    # Desktop
+ #   - { role: spotify, become: true, tags: [desktop, spotify] }
+ #   - { role: teams, become: true, tags: [desktop, teams] }
+    # Dev
+  #  - { role: code, become: true, tags: [dev, code] }
+ #   - { role: intelij, become: true, tags: [dev, intelij] }
+   # - { role: java, become: true, tags: [dev, java] }
+
+- hosts: all
+  become: true
+  tasks:
+  - name: post-run | cleanup apt cache and remove orphan packages 
+    tags: always
+    apt:
+      autoclean: '{{ apt.update_cache }}'
+      autoremove: '{{ apt.autoremove }}'
+    changed_when: false
+    when: ansible_distribution in ["Debian", "Pop!_OS", "Ubuntu"]

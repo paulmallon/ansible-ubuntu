@@ -25,33 +25,34 @@ Run playbook with ansible-pull
 
 | Role                     | Description  
 |--------------------------|----------------------------------------------
-|common                    | Install common packages (see list below) and misc configuration
-|ssh                       | Install OpenSSH server and generate SSH key
-|ufw                       | Enable Uncomplicated Firewall and allow OpenSSH server
-|spotify                   | Install Spoitfy 
-|code                      | Install Visual Studio Code
-|teams                     | Install Microsoft Teams
-|intelij                   | Install Jetbrains InteliJ
-|java                      | Install  OpenJDK 15 - Development Kit and Runtime
-|dotfiles                  | Enable git tracking of configuration files 
-
-
+| base                     | Install common packages (see list below) and misc configuration
+| workstation              | Install desktop applications
 
 ## Tags description
 
-| Tag | Roles
-|-----|----------------
-|base | ssh, common, dotfiles, ufw
-|desktop| spotify, teams
-|dev| code, intelij, java
-
-
+| Tag                      | Description
+|--------------------------|----------------------------------------------
+| pm                       | Setup user
+| dotfiles                 | Git tracking of configuration files   
+| config                   | Configuration tasks
+| ufw                      | Enable Uncomplicated Firewall and allow OpenSSH server
+| software                 | Install software packages
+| common                   | Install common packages (see list below)
+| dev                      | Install development related software
+| code                     | Install Visual Studio Code
+| intelij                  | Install Intelij 
+| java                     | Install OpenJDK 15
+| spotify                  | Install Spotify
+| teams                    | Install Teams
+| git                      | Configure git
+| ssh-server               | Install OpenSSH server
+| ssh                      | Setup SSH   
+| users                    | Setup users
+| ssh-keys                 | Setup SSH keys
 
 Example command
 
     ansible-playbook ansible-desktop.yml --tags <sometag>
-
-
 
 ## Common packages
 
