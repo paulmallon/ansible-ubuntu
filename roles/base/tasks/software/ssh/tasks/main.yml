@@ -7,6 +7,8 @@
     cache_valid_time: '{{ apt.cachetime }}'
     pkg:
       - openssh-server
+  notify:
+    - restart sshs
 
 - name: "software | ssh-server | {{ ssh.password_auth | ternary('Allow','Disallow') }} password authentication"
   tags: ssh-server,config, ssh

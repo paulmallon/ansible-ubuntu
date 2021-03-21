@@ -4,15 +4,15 @@
 #
 # sudoers
 #
-- name: "users | sudoer |  Add 'pm' sudoers file"
+- name: "users | sudoer |  Add '{{ lookup('env', 'USER') }}' sudoers file"
   tags: pm,ssh,ssh-keys,users
   copy:
-    dest: "/etc/sudoers.d/pm"
+    dest: "/etc/sudoers.d/{{ lookup('env', 'USER') }}"
     owner: root
     group: root
     mode: 0440
     content: |
-      pm ALL=(ALL) NOPASSWD: ALL
+      {{ lookup('env', 'USER') }} ALL=(ALL) NOPASSWD: ALL
 
 #
 # ssh
@@ -20,18 +20,18 @@
 - name: "users | ssh | Create .ssh directory"
   tags: pm,ssh,users
   file:
-    path: "{{ item.dir }}"
+    path: "{{ lookup('env','HOME') }}/{{ item.dir }}"
     state: directory
-    owner: pm
-    group: pm
+    owner: "{{ lookup('env', 'USER') }}"
+    group: "{{ lookup('env', 'USER') }}"
     mode: 0700
   with_items:
-    - { dir: '/home/pm/.ssh' }
+    - { dir: '.ssh' }
 
 - name: "users | ssh | Add 'pm_id_20210321.pub' to autorized keys"
   tags: pm,ssh,ssh-keys,users
   authorized_key:
-    user: pm
+    user: "{{ lookup('env', 'USER') }}"
     key: "{{ item }}"
   with_file:
     - users/pm_id_20210321.pub

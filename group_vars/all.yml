@@ -17,5 +17,8 @@ git:
   email: "paul.james.mallon@gmail.com"
   pull: "ff only"
   push: upstream
-
+ansible:
+  repourl: git@github.com:paulmallon/ansible-ubuntu.git
+  user: pm  
+healthcheck_uuid: 9e58a7b9-29e4-42f0-94a6-c780e52439c7
   

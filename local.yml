@@ -11,7 +11,6 @@
       changed_when: False
       when: ansible_distribution in ["Debian", "Ubuntu"]
 
-
 - hosts: all
   tags: base
   become: true
@@ -24,21 +23,6 @@
   roles:
     - workstation
 
-#- hosts: all  
-#  roles:
-    # Base
-#    - { role: common, become: true, tags: [base, common] }
-#    - { role: ssh, become: true, tags: [base, ssh]}
-#    - { role: dotfiles, become: false, tags: [base, dotfiles] }
-#    - { role: ufw, become: true, tags: [base, ufw] }
-    # Desktop
- #   - { role: spotify, become: true, tags: [desktop, spotify] }
- #   - { role: teams, become: true, tags: [desktop, teams] }
-    # Dev
-  #  - { role: code, become: true, tags: [dev, code] }
- #   - { role: intelij, become: true, tags: [dev, intelij] }
-   # - { role: java, become: true, tags: [dev, java] }
-
 - hosts: all
   become: true
   tasks:
@@ -48,4 +32,13 @@
       autoclean: '{{ apt.update_cache }}'
       autoremove: '{{ apt.autoremove }}'
     changed_when: false
-    when: ansible_distribution in ["Debian", "Pop!_OS", "Ubuntu"]
+    when: ansible_distribution in ["Debian", "Ubuntu"]
+
+  - name: post-run | send completion alert
+    tags: always
+    uri:
+      url: https://hc-ping.com/{{ healthcheck_uuid }}
+    changed_when: False
+    when:
+      - task_failed is not defined
+      - healthcheck_uuid is defined

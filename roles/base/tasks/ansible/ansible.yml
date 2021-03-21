@@ -1,0 +1,40 @@
+---
+
+- name: ansible setup | ensure ansible is the latest version
+  tags: ansible,ansible-setup
+  package:
+    name: ansible
+    state: latest
+
+- name: ansible setup | generate provision script from template
+  tags: ansible,ansible-setup,scripts
+  template:
+    src: provision.sh.j2
+    dest: /usr/local/bin/provision
+    owner: root
+    group: root
+    mode: 0755
+
+- name: ansible setup | cron | install cron package
+  tags: packages,ansible,ansible-cron,cron
+  package:
+    name:
+      - "cron"
+    state: latest
+
+- name: ansible setup | cron | schedule automatic ansible provisioning
+  tags: ansible,ansible-cron,cron
+  cron:
+    name: "ansible provision"
+    user: pm
+    hour: "{{ ansible_cron_hour | default('*') }}"
+    minute: "{{ ansible_cron_minute | default('*/5') }}"
+    job: "/usr/local/bin/provision > /dev/null"
+
+- name: ansible setup | cron | schedule ansible cleanup at boot
+  tags: ansible,ansible-cron,cron
+  cron:
+    name: "ansible refresh at boot"
+    user: pm
+    special_time: reboot
+    job: "/bin/rm -rf /home/pm/.ansible"

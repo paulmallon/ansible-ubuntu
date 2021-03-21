@@ -33,22 +33,26 @@ Run playbook with ansible-pull
 | Tag                      | Description
 |--------------------------|----------------------------------------------
 | pm                       | Setup user
-| dotfiles                 | Git tracking of configuration files   
+| dotfiles                 | Git tracking of configuration files
 | config                   | Configuration tasks
 | ufw                      | Enable Uncomplicated Firewall and allow OpenSSH server
 | software                 | Install software packages
 | common                   | Install common packages (see list below)
 | dev                      | Install development related software
 | code                     | Install Visual Studio Code
-| intelij                  | Install Intelij 
+| intelij                  | Install InteliJ
 | java                     | Install OpenJDK 15
 | spotify                  | Install Spotify
 | teams                    | Install Teams
 | git                      | Configure git
 | ssh-server               | Install OpenSSH server
-| ssh                      | Setup SSH   
+| ssh                      | Setup SSH
 | users                    | Setup users
 | ssh-keys                 | Setup SSH keys
+| ansible                  | Setup ansible provitioning
+| ansible-cron             | Setup ansible cron job
+| ansible-setup            | Setup ansible
+| cron                     | Setup cron jobs
 
 Example command
 
