@@ -75,14 +75,14 @@
   tags: pm,git,users
   shell: "git config --global pull.{{ git.pull }}"
 
-- name: "users | git | Configre git user {{ git.user }} "
+- name: "users | git | Configre git user '{{ git.user }}'"
   tags: pm,git,users
   shell: "git config --global user.name {{ git.user }}"
 
-- name: "users | git | Configre git email {{ git.user }}"
+- name: "users | git | Configre git email '{{ git.user }}'"
   tags: pm,git,users
-  shell: "git config --global user.email {{ git.user }}"
+  shell: "git config --global user.email {{ git.email }}"
 
-- name: "users | git | Configure git push.default {{git.push }}"
+- name: "users | git | Configure git push.default '{{git.push }}'"
   tags: pm,git,users
   shell: "git config --global push.default {{ git.push }}"
