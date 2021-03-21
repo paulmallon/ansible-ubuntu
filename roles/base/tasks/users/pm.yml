@@ -1,0 +1,88 @@
+---
+
+
+#
+# sudoers
+#
+- name: "users | sudoer |  Add 'pm' sudoers file"
+  tags: pm,ssh,ssh-keys,users
+  copy:
+    dest: "/etc/sudoers.d/pm"
+    owner: root
+    group: root
+    mode: 0440
+    content: |
+      pm ALL=(ALL) NOPASSWD: ALL
+
+#
+# ssh
+#        
+- name: "users | ssh | Create .ssh directory"
+  tags: pm,ssh,users
+  file:
+    path: "{{ item.dir }}"
+    state: directory
+    owner: pm
+    group: pm
+    mode: 0700
+  with_items:
+    - { dir: '/home/pm/.ssh' }
+
+- name: "users | ssh | Add 'pm_id_20210321.pub' to autorized keys"
+  tags: pm,ssh,ssh-keys,users
+  authorized_key:
+    user: pm
+    key: "{{ item }}"
+  with_file:
+    - users/pm_id_20210321.pub
+
+- name: "users | ssh | Generate SSH key '{{ lookup('env','HOME') + '/.ssh/id_rsa' }}'"
+  tags: pm,ssh,ssh-keys,users
+  openssh_keypair:
+    path: "{{ lookup('env','HOME') + '/.ssh/id_rsa' }}"
+    type: rsa
+    size: 4096
+    state: present
+    force: no
+
+- name: "users | ssh | Ensure authorized key contains '{{ lookup('env','HOME') + '/.ssh/id_rsa.pub' }}' "
+  tags: pm,ssh,ssh-keys,users
+  authorized_key:
+    user: "{{ lookup('env', 'USER') }}"
+    key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
+    state: present
+
+- name: "users | ssh | Ensure file permissions on '{{ lookup('env','HOME') + '/.ssh/' }}'"
+  tags: pm,ssh,ssh-keys,users
+  file:
+    path: "{{ lookup('env','HOME') + '/.ssh/id_rsa.pub' }}"
+    owner: "{{ lookup('env', 'USER') }}"
+    group: "{{ lookup('env', 'USER') }}"
+    mode: 0755
+
+- name: "users | ssh | Ensure file permissions on '{{ lookup('env','HOME') + '/.ssh/id_rsa.pub' }}'"
+  tags: pm,ssh,ssh-keys,users
+  file:
+    path: "{{ lookup('env','HOME') + '/.ssh/id_rsa.pub' }}"
+    owner: "{{ lookup('env', 'USER') }}"
+    group: "{{ lookup('env', 'USER') }}"
+    mode: 0644
+
+#
+# git
+#
+- name: "users | git | Configure git pull.{{ git.pull }}"
+  tags: pm,git,users
+  shell: "git config --global pull.{{ git.pull }}"
+
+- name: "users | git | Configre git user {{ git.user }} "
+  tags: pm,git,users
+  shell: "git config --global user.name {{ git.user }}"
+
+- name: "users | git | Configre git email {{ git.user }}"
+  tags: pm,git,users
+  shell: "git config --global user.email {{ git.user }}"
+
+- name: "users | git | Configure git push.default {{git.push }}"
+  tags: pm,git,users
+  shell: "git config --global push.default {{ git.push }}"

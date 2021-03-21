@@ -1,0 +1,38 @@
+---
+
+- name: "software | ssh-server | Install OpenSSH server"
+  tags: ssh-server, ssh
+  apt:
+    state: latest
+    cache_valid_time: '{{ apt.cachetime }}'
+    pkg:
+      - openssh-server
+
+- name: "software | ssh-server | {{ ssh.password_auth | ternary('Allow','Disallow') }} password authentication"
+  tags: ssh-server,config, ssh
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^PasswordAuthentication'
+    line: "PasswordAuthentication {{ ssh.password_auth | ternary('yes','no') }}"
+    state: present
+    backup: yes
+  notify:
+    - restart ssh
+    
+- name: "software | ssh-server | {{ ssh.root_login | ternary('Allow','Disallow') }} root SSH access"
+  tags: ssh-server,config, ssh
+  lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^PermitRootLogin'
+        line: "PermitRootLogin {{ ssh.root_login | ternary('yes','no') }}"
+        state: present
+        backup: yes
+  notify:
+    - restart ssh
+
+- name: "software | ssh-server | Ensure SSH service state is {{ ssh.start | ternary('started','stopped') }}"
+  tags: ssh-server, config, ssh
+  ansible.builtin.service:
+    name: ssh
+    state: "{{ ssh.start | ternary('restarted','stopped') }}"
+    enabled: "{{ ssh.service_enabled }}"

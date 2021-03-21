@@ -1,0 +1,47 @@
+---
+
+- name: "software | common | Install common packages"
+  tags: software,common
+  apt:
+    state: latest
+    cache_valid_time: '{{ apt.cachetime }}'
+    pkg:
+      - build-essential
+      - curl
+      - diffutils
+      - git
+      - grep
+      - gzip
+      - htop
+      - iotop
+      - less
+      - make
+      - nano
+      - nmap
+      - openssl
+      - rar
+      - rsync
+      - software-properties-common
+      - tar
+      - unzip
+      - vim
+      - wget
+      - whois
+      - zip
+      - stress
+      - s-tui
+      - iputils-ping 
+      - net-tools
+      - powertop
+      - nmon
+      - iptraf-ng
+      - jq
+      - dnsutils
+      - solaar
+      - cpupower-gui
+      - nomad
+      - lm-sensors
+      - remmina
+      - tldr
+
+  

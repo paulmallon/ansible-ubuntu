@@ -1,0 +1,18 @@
+---
+
+- block:
+  
+  - import_tasks: users/pm.yml
+  
+  - import_tasks: config/dotfiles.yml
+  - import_tasks: config/ufw.yml
+
+  - import_tasks: software/common.yml
+  - import_tasks: software/ssh/tasks/main.yml
+
+  
+
+  
+
+
+  

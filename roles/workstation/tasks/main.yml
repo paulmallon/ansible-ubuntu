@@ -1,0 +1,9 @@
+---
+
+- block:
+
+  - import_tasks: software/code.yml
+  - import_tasks: software/intelij.yml
+  - import_tasks: software/java.yml
+  - import_tasks: software/spotify.yml
+  - import_tasks: software/teams.yml

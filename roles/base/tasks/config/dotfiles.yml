@@ -1,0 +1,20 @@
+---
+
+- name: "dotfiles | Clone bare repository to ~/.cfg from '{{ dotfiles.repourl }}'"
+  tags: pm,dotfiles,config
+  ansible.builtin.git:
+    repo: '{{ dotfiles.repourl }}'
+    dest: "{{ lookup('env','HOME') }}/.cfg"
+    bare: yes
+  become: no
+
+- name: "dotfiles | Configure status showUntrackedFiles no"
+  tags: pm,dotfiles,config
+  shell: /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME config status.showUntrackedFiles no
+  become: no
+
+- name: "dotfiles | Checkout repository"
+  tags: pm,dotfiles,config
+  shell: /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME checkout --force
+  become: no
+

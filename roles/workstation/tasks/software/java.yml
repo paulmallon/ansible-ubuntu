@@ -1,0 +1,13 @@
+---
+
+- name: software | java | Install Java 15 JDK and JRE
+  tags: dev, java, software
+  apt:
+    state: latest
+    cache_valid_time: '{{ apt.cachetime }}'
+    pkg:
+      - openjdk-15-jre
+      - openjdk-15-jdk
+    
+    
+    

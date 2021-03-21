@@ -1,0 +1,25 @@
+---
+
+- name: software | teams | Add Micorsoft Apt Keys
+  tags: teams, software
+  apt_key:
+    url: https://packages.microsoft.com/keys/microsoft.asc
+    state: present
+
+- name: software | teams | Add Teams repo
+  tags: teams, software
+  apt_repository:
+    repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/ms-teams stable main'
+    filename: teams
+    state: present
+  
+- name: software | teams | Install Teams
+  tags: teams, software
+  apt:
+    state: latest
+    cache_valid_time: '{{ apt.cachetime }}'
+    autoclean: '{{ apt.autoclean }}'
+    autoremove: '{{ apt.autoremove }}'
+    update_cache: '{{ apt.update_cache }}'
+    pkg:
+      - teams

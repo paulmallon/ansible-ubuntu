@@ -1,0 +1,31 @@
+---
+
+- name: software | code | Add Micorsoft Apt Keys
+  tags: code, dev, software
+  apt_key:
+    url: https://packages.microsoft.com/keys/microsoft.asc
+    state: present
+
+- name: software | code | Add Code repo
+  tags: code, dev, software
+  become: yes
+  apt_repository:
+    repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main'
+    filename: vscode
+    state: present
+  
+- name: software | code | Install Code
+  tags: code, dev, software
+  apt:
+    state: latest
+    cache_valid_time: '{{ apt.cachetime }}'
+    autoclean: '{{ apt.autoclean }}'
+    autoremove: '{{ apt.autoremove }}'
+    update_cache: '{{ apt.update_cache }}'
+    pkg:
+      - code
+
+  
+- name: software | code | Set Code as default editor 
+  tags: code, dev, software
+  shell: update-alternatives --set editor /usr/bin/code
