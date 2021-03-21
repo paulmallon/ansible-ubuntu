@@ -8,7 +8,7 @@
     bare: yes
   become: no
 
-- name: "dotfiles | Configure status showUntrackedFiles no"
+- name: "dotfiles | Configure 'status showUntrackedFiles no'"
   tags: pm,dotfiles,config
   shell: /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME config status.showUntrackedFiles no
   become: no
