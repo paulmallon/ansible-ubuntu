@@ -1,0 +1,5 @@
+- name: software | signal | Install Signal desktop
+  tags: signal, software
+  snap:
+    name: signal-desktop
+    

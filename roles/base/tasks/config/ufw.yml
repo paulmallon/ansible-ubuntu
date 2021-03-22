@@ -1,7 +1,7 @@
 ---
 
 
-- name: "ufw - Allow SSH connections"
+- name: "ufw | Allow SSH connections"
   tags: ufw,config
   ufw:
     rule: allow
