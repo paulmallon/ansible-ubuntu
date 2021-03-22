@@ -1,3 +1,3 @@
 [workstation]
-pm-thinkpad         ansible_connection=local
-pm-Precision-T1500  ansible_connection=local
+pm-thinkpad         
+pm-Precision-T1500  
