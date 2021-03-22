@@ -77,7 +77,7 @@
 
 - name: "users | git | Configre git user '{{ git.user }}'"
   tags: pm,git,users
-  shell: "git config --global user.name {{ git.user }}"
+  shell: "git config --global user.name {{ git.user }} --replace-all"
 
 - name: "users | git | Configre git email '{{ git.email }}'"
   tags: pm,git,users
