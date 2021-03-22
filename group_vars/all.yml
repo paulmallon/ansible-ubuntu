@@ -1,24 +1,4 @@
 ---
 
-apt:
-  autoremove: yes
-  autoclean: yes
-  update_cache: yes
-  cachetime: 3600
-ssh:
-  start: true
-  service_enabled: true
-  password_auth: false
-  root_login: false
-dotfiles:
-  repourl: git@github.com:paulmallon/cfg.git
-git:
-  user: "PM"
-  email: "paul.james.mallon@gmail.com"
-  pull: "ff only"
-  push: upstream
-ansible:
-  repourl: git@github.com:paulmallon/ansible-ubuntu.git
-  user: pm  
 healthcheck_uuid: 9e58a7b9-29e4-42f0-94a6-c780e52439c7
   

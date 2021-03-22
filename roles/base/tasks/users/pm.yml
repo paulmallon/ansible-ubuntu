@@ -71,7 +71,7 @@
 #
 # git
 #
-- name: "users | git | Configure git pull.{{ git.pull }}"
+- name: "users | git | Configure git pull. {{ git.pull }}"
   tags: pm,git,users
   shell: "git config --global pull.{{ git.pull }}"
 
@@ -79,7 +79,7 @@
   tags: pm,git,users
   shell: "git config --global user.name {{ git.user }}"
 
-- name: "users | git | Configre git email '{{ git.user }}'"
+- name: "users | git | Configre git email '{{ git.email }}'"
   tags: pm,git,users
   shell: "git config --global user.email {{ git.email }}"
 
