@@ -1,0 +1,169 @@
+---
+
+#
+# xfce4 workspace
+#
+
+- name: users | xfce4 | general | Set number of workspaces (2)
+  tags: pm,xfce4,users,workspace 
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfwm4
+    property: /general/workspace_count
+    value_type: int
+    value: "2"
+
+#
+# xfce4 application shortcuts
+#
+
+- name: users | xfce4 | shortcut | Remove '<Alt>F12' keybinding
+  tags: pm,xfce4,users,shortcuts
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "/xfwm4/default/<Alt>F12"
+    value_type: string
+    value: "notset"
+
+- name: users | xfce4 | shortcut | code (<Super>e)
+  tags: pm,xfce4,users,shortcuts
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "/commands/custom/<Super>e"
+    value_type: string
+    value: "code"
+
+- name: users | xfce4 | shortcut | thunar (<Super>f)
+  tags: pm,xfce4,users,shortcuts
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "/commands/custom/<Super>f"
+    value_type: string
+    value: "thunar"
+
+- name: users | xfce4 | shortcut | firefox (<Super>W)
+  tags: pm,xfce4,users,shortcuts
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "/commands/custom/<Super>w"
+    value_type: string
+    value: "firefox"
+
+- name: users | xfce4 | shortcut | xfce4-display-settings (<Super>p)
+  tags: pm,xfce4,users,shortcuts
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "/commands/custom/<Super>p"
+    value_type: string
+    value: "xfce4-display-settings --minimal"
+
+- name: users | xfce4 | shortcut | xfce4-appfinder (<Super>r)
+  tags: pm,xfce4,users,shortcuts
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "/commands/custom/<Super>r"
+    value_type: string
+    value: "xfce4-appfinder"
+
+- name: users | xfce4 | shortcut | xfce4-terminal --tab (<Super>t)
+  tags: pm,xfce4,users,shortcuts
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "/commands/custom/<Super>t"
+    value_type: string
+    value: "xfce4-terminal --tab"
+
+- name: users | xfce4 | shortcut | xflock4 (<Super>l)
+  tags: pm,xfce4,users,shortcuts
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "/commands/custom/<Super>l"
+    value_type: string
+    value: "xflock4"
+
+- name: users | xfce4 | shortcut | xflock4 (<Primary><Alt>Delete)
+  tags: pm,xfce4,users,shortcuts
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "/commands/custom/<Primary><Alt>Delete"
+    value_type: string
+    value: "xflock4"
+
+
+
+#
+# xfce4 window shortcuts
+#
+- name: users | xfce4 | shortcut | tile_down_left_key
+  tags: pm,xfce4,users,shortcut
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "/xfwm4/custom/<Primary><Super>Left"
+    value_type: string
+    value: "tile_down_left_key"
+
+
+- name: users | xfce4 | shortcut | tile_down_right_key
+  tags: pm,xfce4,users,shortcut
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "/xfwm4/custom/<Primary><Super>Right"
+    value_type: string
+    value: "tile_down_right_key"
+
+- name: users | xfce4 | shortcut | tile_up_left_key
+  tags: pm,xfce4,users,shortcut
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "/xfwm4/custom/<Shift><Super>Left"
+    value_type: string
+    value: "tile_up_left_key"
+
+- name: users | xfce4 | shortcut | tile_up_right_key
+  tags: pm,xfce4,users,shortcut
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "/xfwm4/custom/<Shift><Super>Right"
+    value_type: string
+    value: "tile_up_right_key"
