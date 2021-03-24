@@ -86,3 +86,142 @@
 - name: "users | git | Configure git push.default '{{git.push }}'"
   tags: pm,git,users
   shell: "git config --global push.default {{ git.push }}"
+
+#
+# xfce4 shortcuts
+#
+
+- name: users | xfce4 | general | Set number of workspaces (2)
+  tags: pm,xfce4,users,workspace 
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfwm4
+    property: /general/workspace_count
+    value_type: int
+    value: "2"
+
+- name: users | xfce4 | shortcut | Remove '<Alt>F12' keybinding
+  tags: pm,xfce4,users,shortcut
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfwm4
+    property: "/default/<Alt>F12"
+    value_type: string
+    value: "null"
+
+- name: users | xfce4 | shortcut | code
+  tags: pm,xfce4,users,shortcut
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfwm4
+    property: "/default/<super>e"
+    value_type: string
+    value: "code"
+
+- name: users | xfce4 | shortcut | thunar
+  tags: pm,xfce4,users,shortcut
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfwm4
+    property: "/default/<super>f"
+    value_type: string
+    value: "thunar"
+
+
+- name: users | xfce4 | shortcut | firefox
+  tags: pm,xfce4,users,shortcut
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfwm4
+    property: "/default/<super>w"
+    value_type: string
+    value: "firefox"
+
+- name: users | xfce4 | shortcut | xfce4-display-settings
+  tags: pm,xfce4,users,shortcut
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfwm4
+    property: "/default/<super>p"
+    value_type: string
+    value: "xfce4-display-settings --minimal"
+
+- name: users | xfce4 | shortcut | xfce4-appfinder
+  tags: pm,xfce4,users,shortcut
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfwm4
+    property: "/default/<super>r"
+    value_type: string
+    value: "xfce4-appfinder"
+
+- name: users | xfce4 | shortcut | xfce4-terminal
+  tags: pm,xfce4,users,shortcut
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfwm4
+    property: "/default/<super>r"
+    value_type: string
+    value: "xfce4-terminal --tab"
+
+- name: users | xfce4 | shortcut | tile_down_left_key
+  tags: pm,xfce4,users,shortcut
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfwm4
+    property: "/custom/<Primary><Super>Left"
+    value_type: string
+    value: "tile_down_left_key"
+
+
+- name: users | xfce4 | shortcut | tile_down_right_key
+  tags: pm,xfce4,users,shortcut
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfwm4
+    property: "/custom/<Primary><Super>Right"
+    value_type: string
+    value: "tile_down_right_key"
+
+- name: users | xfce4 | shortcut | tile_up_left_key
+  tags: pm,xfce4,users,shortcut
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfwm4
+    property: "/custom/<Shift><Super>Left"
+    value_type: string
+    value: "tile_up_left_key"
+
+- name: users | xfce4 | shortcut | tile_up_right_key
+  tags: pm,xfce4,users,shortcut
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfwm4
+    property: "/custom/<Shift><Super>Right"
+    value_type: string
+    value: "tile_up_right_key"
+
