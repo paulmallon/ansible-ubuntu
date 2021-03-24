@@ -1,15 +1,8 @@
 ---
 
-
-#- hosts: all
-#  tasks:
-#  - name: "Load variables from host_vars/{{ansible_hostname}}.yml"
-#    include_vars:
-#      file: "host_vars/{{ansible_hostname}}.yml"
-      
-      
-
-      
+#
+# Pre tasks
+#
 - hosts: all
   tags: always
   become: true
@@ -24,6 +17,9 @@
       changed_when: False
       when: ansible_distribution in ["Debian", "Ubuntu"]
 
+#
+# Roles
+#
 - hosts: all
   tags: base
   become: true
@@ -36,6 +32,9 @@
   roles:
     - workstation
 
+#
+# Post tasks
+#
 - hosts: all
   become: true
   tasks:
