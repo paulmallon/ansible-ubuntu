@@ -1,3 +1,2 @@
 [workstation]
-pm-thinkpad         
-pm-Precision-T1500  
+localhost              ansible_connection=local

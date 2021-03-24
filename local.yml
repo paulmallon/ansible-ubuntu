@@ -1,9 +1,22 @@
 ---
 
+
+#- hosts: all
+#  tasks:
+#  - name: "Load variables from host_vars/{{ansible_hostname}}.yml"
+#    include_vars:
+#      file: "host_vars/{{ansible_hostname}}.yml"
+      
+      
+
+      
 - hosts: all
   tags: always
   become: true
   pre_tasks:
+    - name: "pre-run | Load variables from host_vars/{{ansible_hostname}}.yml"
+      include_vars:
+        file: "host_vars/{{ansible_hostname}}.yml"
     - name: pre-run | update apt cache 
       tags: always
       apt: 
@@ -50,3 +63,5 @@
     when:
       - task_failed is defined
       - task_failed == true
+
+

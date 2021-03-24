@@ -20,7 +20,6 @@ ssh:
 dotfiles:
   repourl: git@github.com:paulmallon/cfg.git
 
-
 ansible:
   repourl: git@github.com:paulmallon/ansible-ubuntu.git
   user: pm 
