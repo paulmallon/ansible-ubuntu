@@ -1,5 +1,5 @@
 - name: system setup | memory | adjust current swappiness to '{{ system.swappiness_value }}'
-  tags: swappiness,sysctl,system,setup,memory
+  tags: swappiness,sysctl,system,memory
   lineinfile:
     dest: "/etc/sysctl.conf"
     create: yes
@@ -8,6 +8,6 @@
   register: swappiness
 
 - name: system setup | memory | apply swappiness
-  tags: swappiness,sysctl,system,setup,memory
+  tags: swappiness,sysctl,system,memory
   command: sysctl vm.swappiness={{ system.swappiness_value }}
   when: swappiness.changed

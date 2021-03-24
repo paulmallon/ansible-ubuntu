@@ -53,6 +53,10 @@ Run playbook with ansible-pull
 | ansible-cron             | Setup ansible cron job
 | ansible-setup            | Setup ansible
 | cron                     | Setup cron jobs
+| swappiness               | Configure system swappiness
+| sysctl                   | System configuration
+| system                   | System configuration
+| swappiness               | Configure system swappiness
 
 Example command
 
