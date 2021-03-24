@@ -10,7 +10,7 @@
     - name: "pre-run | Load variables from host_vars/{{ansible_hostname}}.yml"
       include_vars:
         file: "host_vars/{{ansible_hostname}}.yml"
-    - name: pre-run | update apt cache 
+    - name: pre-run | Update apt cache 
       tags: always
       apt: 
         update_cache: '{{ apt.update_cache }}'
@@ -38,7 +38,7 @@
 - hosts: all
   become: true
   tasks:
-  - name: post-run | cleanup apt cache and remove orphan packages 
+  - name: post-run | Cleanup apt cache and remove orphan packages 
     tags: always
     apt:
       autoclean: '{{ apt.update_cache }}'
@@ -46,7 +46,7 @@
     changed_when: false
     when: ansible_distribution in ["Debian", "Ubuntu"]
 
-  - name: post-run | send completion alert
+  - name: post-run | Send completion alert
     tags: always
     uri:
       url: https://hc-ping.com/{{ healthcheck_uuid }}
@@ -55,7 +55,7 @@
       - task_failed is not defined
       - healthcheck_uuid is defined
 
-  - name: post-run | send failure alert
+  - name: post-run | Send failure alert
     tags: always
     uri:
       url: https://hc-ping.com/{{ healthcheck_uuid }}/fail
