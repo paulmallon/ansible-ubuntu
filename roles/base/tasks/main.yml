@@ -3,9 +3,8 @@
 - block:
   - import_tasks: users/pm.yml
   - import_tasks: config/memory.yml
-  - import_tasks: config/xfce4.yml
   - import_tasks: config/ufw.yml
   - import_tasks: software/common.yml
   - import_tasks: software/ssh/tasks/main.yml
-  - import_tasks: ansible/ansible.yml
+  - import_tasks: provisioning/ansible.yml
    

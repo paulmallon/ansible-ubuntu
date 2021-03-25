@@ -36,12 +36,9 @@
       - nmon
       - iptraf-ng
       - jq
-      - dnsutils
-      - solaar
-      - cpupower-gui
+      - dnsutils      
       - nomad
       - lm-sensors
-      - remmina
       - tldr
 
   

@@ -1,0 +1,11 @@
+- name: software | cpupower-gui | Install cpupower-gui
+  tags: cpupower-gui,cpupower,software
+  apt:
+    state: latest
+    cache_valid_time: '{{ apt.cachetime }}'
+    autoclean: '{{ apt.autoclean }}'
+    autoremove: '{{ apt.autoremove }}'
+    update_cache: '{{ apt.update_cache }}'
+    pkg:
+      - cpupower-gui
+  when: software.cpupower is defined and software.cpupower == true

@@ -7,3 +7,13 @@ git:
   push: upstream
 system:
   swappiness_value: 10
+software: 
+  code: true
+  intelij: true
+  java: true
+  signal: true
+  spotify: true
+  teams: true
+  solaar: true
+  remmina: true
+  cpupower: true

@@ -1,10 +1,13 @@
 ---
 
 - block:
-
+  - import_tasks: config/xfce4.yml
   - import_tasks: software/code.yml
   - import_tasks: software/intelij.yml
   - import_tasks: software/java.yml
   - import_tasks: software/spotify.yml
   - import_tasks: software/teams.yml
   - import_tasks: software/signal.yml
+  - import_tasks: software/solaar.yml
+  - import_tasks: software/remmina.yml
+  - import_tasks: software/cpupower.yml

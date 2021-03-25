@@ -1,5 +1,6 @@
-- name: software | signal | Install Signal desktop
+- name: software | signal | Install Signal
   tags: signal, software
   snap:
     name: signal-desktop
+  when: software.signal is defined and software.signal == true
     

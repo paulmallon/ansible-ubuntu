@@ -5,13 +5,15 @@
   apt_key:
     url: https://packages.microsoft.com/keys/microsoft.asc
     state: present
+  when: software.teams is defined and software.teams == true
 
-- name: software | teams | Add Teams repo
+- name: software | teams | Add Teams repository
   tags: teams, software
   apt_repository:
     repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/ms-teams stable main'
     filename: teams
     state: present
+  when: software.teams is defined and software.teams == true
   
 - name: software | teams | Install Teams
   tags: teams, software
@@ -23,3 +25,4 @@
     update_cache: '{{ apt.update_cache }}'
     pkg:
       - teams
+  when: software.teams is defined and software.teams == true

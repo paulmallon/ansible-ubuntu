@@ -24,3 +24,14 @@ ansible:
   repourl: git@github.com:paulmallon/ansible-ubuntu.git
   user: pm 
   ansible_cron_minute: 5
+
+software: 
+  code: false
+  intelij: false
+  java: false
+  signal: false
+  spotify: false
+  teams: false
+  solaar: false
+  remmina: false
+  cpupower: false

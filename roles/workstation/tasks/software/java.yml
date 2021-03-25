@@ -1,6 +1,6 @@
 ---
 
-- name: software | java | Install Java 15 JDK and JRE
+- name: software | java | Install OpenJDK 15
   tags: dev, java, software
   apt:
     state: latest
@@ -8,6 +8,7 @@
     pkg:
       - openjdk-15-jre
       - openjdk-15-jdk
+  when: software.java is defined and software.java == true
     
     
     

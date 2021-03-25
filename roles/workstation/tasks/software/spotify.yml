@@ -5,10 +5,12 @@
   apt_key:
     url: https://download.spotify.com/debian/pubkey_0D811D58.gpg
     state: present
+  when: software.spotify is defined and software.spotify == true
 
 - name: software | spotify | Add Spotify repository
   tags: spotify, software
   apt_repository: repo="deb http://repository.spotify.com stable non-free"
+  when: software.spotify is defined and software.spotify == true
 
 - name: software | spotify | Install Spotify
   tags: spotify, software
@@ -18,3 +20,4 @@
     update_cache: '{{ apt.update_cache }}'
     pkg:
       - spotify-client
+  when: software.spotify is defined and software.spotify == true
