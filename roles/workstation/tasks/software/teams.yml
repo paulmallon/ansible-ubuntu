@@ -20,9 +20,6 @@
   apt:
     state: latest
     cache_valid_time: '{{ apt.cachetime }}'
-    autoclean: '{{ apt.autoclean }}'
-    autoremove: '{{ apt.autoremove }}'
-    update_cache: '{{ apt.update_cache }}'
     pkg:
       - teams
   when: software.teams is defined and software.teams == true

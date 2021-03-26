@@ -1,6 +1,0 @@
-- name: software | intelij | Install Intellij Idea Community
-  tags: intelij, java, dev, software
-  snap:
-    name: intellij-idea-community
-    classic: yes
-  when: software.intelij is defined and software.intelij == true

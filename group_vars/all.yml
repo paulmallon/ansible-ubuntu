@@ -4,6 +4,8 @@ healthcheck_uuid: 9e58a7b9-29e4-42f0-94a6-c780e52439c7
 
 system:
   swappiness_value: 20
+  provisioning: false
+  disable_apport: true
 
 apt:
   autoremove: yes
@@ -27,7 +29,7 @@ ansible:
 
 software: 
   code: false
-  intelij: false
+  intellij: false
   java: false
   signal: false
   spotify: false
@@ -35,3 +37,4 @@ software:
   solaar: false
   remmina: false
   cpupower: false
+

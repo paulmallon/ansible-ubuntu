@@ -1,40 +1,45 @@
 ---
 
-- name: ansible setup | ensure ansible is the latest version
-  tags: ansible,ansible-setup
+- name: provisioning | Ensure ansible is the latest version
+  tags: provisioning,ansible
   package:
     name: ansible
     state: latest
+  when: system.provisioning is defined and system.provisioning == true
 
-- name: ansible setup | generate provision script from template
-  tags: ansible,ansible-setup,scripts
+- name: provisioning | Generate provision script from template
+  tags: provisioning,ansible,scripts
   template:
     src: provision.sh.j2
     dest: /usr/local/bin/provision
     owner: root
     group: root
     mode: 0755
+  when: system.provisioning is defined and system.provisioning == true
 
-- name: ansible setup | cron | install cron package
-  tags: packages,ansible,ansible-cron,cron
+- name: provisioning | Install cron package
+  tags: provisioning,ansible,ansible-cron,cron
   package:
     name:
       - "cron"
     state: latest
+  when: system.provisioning is defined and system.provisioning == true
 
-- name: ansible setup | cron | schedule automatic ansible provisioning
-  tags: ansible,ansible-cron,cron
+- name: provisioning | Schedule automatic ansible provisioning
+  tags: provisioning,ansible,ansible-cron,cron
   cron:
     name: "ansible provision"
     user: pm
     hour: "{{ ansible_cron_hour | default('*') }}"
     minute: "{{ ansible.ansible_cron_minute | default('*/5') }}"
     job: "/usr/local/bin/provision > /dev/null"
+  when: system.provisioning is defined and system.provisioning == true
 
-- name: ansible setup | cron | schedule ansible cleanup at boot
-  tags: ansible,ansible-cron,cron
+- name: provisioning | Schedule ansible cleanup at boot
+  tags: provisioning,ansible,ansible-cron,cron
   cron:
     name: "ansible refresh at boot"
     user: pm
     special_time: reboot
     job: "/bin/rm -rf /home/pm/.ansible"
+  when: system.provisioning is defined and system.provisioning == true

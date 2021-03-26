@@ -7,9 +7,10 @@ git:
   push: upstream
 system:
   swappiness_value: 5
+  provisioning: true
 software: 
   code: true
-  intelij: true
+  intellij: true
   java: true
   signal: true
   spotify: true

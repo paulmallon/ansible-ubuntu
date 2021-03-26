@@ -17,7 +17,6 @@
   apt:
     state: latest
     cache_valid_time: '{{ apt.cachetime }}'
-    update_cache: '{{ apt.update_cache }}'
     pkg:
       - spotify-client
   when: software.spotify is defined and software.spotify == true

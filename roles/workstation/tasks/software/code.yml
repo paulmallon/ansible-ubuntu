@@ -21,14 +21,13 @@
   apt:
     state: latest
     cache_valid_time: '{{ apt.cachetime }}'
-    autoclean: '{{ apt.autoclean }}'
-    autoremove: '{{ apt.autoremove }}'
-    update_cache: '{{ apt.update_cache }}'
     pkg:
       - code
   when: software.code is defined and software.code == true
 
 - name: software | code | Set Code as default editor 
   tags: code, dev, software
-  shell: update-alternatives --set editor /usr/bin/code
+  alternatives:
+    name: editor
+    path: /usr/bin/code
   when: software.code is defined and software.code == true

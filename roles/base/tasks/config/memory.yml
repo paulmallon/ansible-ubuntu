@@ -1,4 +1,4 @@
-- name: system setup | memory | adjust current swappiness to '{{ system.swappiness_value }}'
+- name: system setup | memory | Set swappiness to '{{ system.swappiness_value }}'
   tags: swappiness,sysctl,system,memory
   lineinfile:
     dest: "/etc/sysctl.conf"

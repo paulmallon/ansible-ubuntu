@@ -1,11 +1,10 @@
 ---
 
-
 #
 # sudoers
 #
-- name: "users | sudoer |  Add '{{ lookup('env', 'USER') }}' sudoers file"
-  tags: pm,ssh,ssh-keys,users
+- name: "users | sudoers |  Add '{{ lookup('env', 'USER') }}' sudoers file"
+  tags: pm,sudoers,users
   copy:
     dest: "/etc/sudoers.d/{{ lookup('env', 'USER') }}"
     owner: root
@@ -17,7 +16,7 @@
 #
 # ssh
 #        
-- name: "users | ssh | Create .ssh directory"
+- name: "users | ssh-keys | Create '{{ lookup('env','HOME') }}/.ssh directory'"
   tags: pm,ssh,users
   file:
     path: "{{ lookup('env','HOME') }}/{{ item.dir }}"
@@ -28,7 +27,7 @@
   with_items:
     - { dir: '.ssh' }
 
-- name: "users | ssh | Add 'pm_id_20210321.pub' to autorized keys"
+- name: "users | ssh-keys | Add 'pm_id_20210321.pub' to autorized keys"
   tags: pm,ssh,ssh-keys,users
   authorized_key:
     user: "{{ lookup('env', 'USER') }}"
@@ -36,7 +35,7 @@
   with_file:
     - users/pm_id_20210321.pub
 
-- name: "users | ssh | Generate SSH key '{{ lookup('env','HOME') + '/.ssh/id_rsa' }}'"
+- name: "users | ssh-keys | Generate SSH key '{{ lookup('env','HOME') + '/.ssh/id_rsa' }}'"
   tags: pm,ssh,ssh-keys,users
   openssh_keypair:
     path: "{{ lookup('env','HOME') + '/.ssh/id_rsa' }}"
@@ -45,22 +44,30 @@
     state: present
     force: no
 
-- name: "users | ssh | Ensure authorized key contains '{{ lookup('env','HOME') + '/.ssh/id_rsa.pub' }}' "
+- name: "users | ssh-keys | Ensure authorized keys contains '{{ lookup('env','HOME') + '/.ssh/id_rsa.pub' }}' "
   tags: pm,ssh,ssh-keys,users
   authorized_key:
     user: "{{ lookup('env', 'USER') }}"
     key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
     state: present
 
-- name: "users | ssh | Ensure file permissions on '{{ lookup('env','HOME') + '/.ssh/' }}'"
+- name: "users | ssh-keys | Ensure '0755' permissions on directory '{{ lookup('env','HOME') + '/.ssh/' }}'"
+  tags: pm,ssh,ssh-keys,users
+  file:
+    path: "{{ lookup('env','HOME') + '/.ssh' }}"
+    owner: "{{ lookup('env', 'USER') }}"
+    group: "{{ lookup('env', 'USER') }}"
+    mode: 0755
+
+- name: "users | ssh-keys | Ensure '0644' permissions on file '{{ lookup('env','HOME') + '/.ssh/id_rsa.pub' }}'"
   tags: pm,ssh,ssh-keys,users
   file:
     path: "{{ lookup('env','HOME') + '/.ssh/id_rsa.pub' }}"
     owner: "{{ lookup('env', 'USER') }}"
     group: "{{ lookup('env', 'USER') }}"
-    mode: 0755
+    mode: 0644
 
-- name: "users | ssh | Ensure file permissions on '{{ lookup('env','HOME') + '/.ssh/id_rsa.pub' }}'"
+- name: "users | ssh-keys | Ensure '0644' permissions on file '{{ lookup('env','HOME') + '/.ssh/authorized_keys' }}'"
   tags: pm,ssh,ssh-keys,users
   file:
     path: "{{ lookup('env','HOME') + '/.ssh/id_rsa.pub' }}"
@@ -71,7 +78,7 @@
 #
 # git
 #
-- name: "users | git | Configure git pull. {{ git.pull }}"
+- name: "users | git | Configure git pull '{{ git.pull }}'"
   become: false
   tags: pm,git,users
   shell: "git config --global pull.{{ git.pull }}"
@@ -94,21 +101,21 @@
 #
 # dofiles
 #
-- name: "dotfiles | Clone bare repository to ~/.cfg from '{{ dotfiles.repourl }}'"
-  tags: pm,dotfiles,config,users
+- name: "users | dotfiles | Clone bare repository from '{{ dotfiles.repourl }}' to '{{ lookup('env','HOME') }}/.cfg'"
+  tags: pm,dotfiles,users
   ansible.builtin.git:
     repo: '{{ dotfiles.repourl }}'
     dest: "{{ lookup('env','HOME') }}/.cfg"
     bare: yes
   become: no
 
-- name: "dotfiles | Configure 'status showUntrackedFiles no'"
-  tags: pm,dotfiles,config,users
+- name: "users | dotfiles | Configure repository with 'showUntrackedFiles no'"
+  tags: pm,dotfiles,users
   shell: /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME config status.showUntrackedFiles no
   become: no
 
-- name: "dotfiles | Checkout repository"
-  tags: pm,dotfiles,config,users
+- name: "users | dotfiles | Force checkout repository"
+  tags: pm,dotfiles,users
   shell: /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME checkout --force
   become: no
 

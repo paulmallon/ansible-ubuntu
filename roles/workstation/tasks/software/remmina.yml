@@ -3,9 +3,6 @@
   apt:
     state: latest
     cache_valid_time: '{{ apt.cachetime }}'
-    autoclean: '{{ apt.autoclean }}'
-    autoremove: '{{ apt.autoremove }}'
-    update_cache: '{{ apt.update_cache }}'
     pkg:
       - remmina
   when: software.remmina is defined and software.remmina == true
