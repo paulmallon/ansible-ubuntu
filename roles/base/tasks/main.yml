@@ -2,6 +2,7 @@
 
 - block:
   - import_tasks: users/pm.yml
+  - import_tasks: config/apport.yml
   - import_tasks: config/memory.yml
   - import_tasks: config/ufw.yml
   - import_tasks: software/common.yml

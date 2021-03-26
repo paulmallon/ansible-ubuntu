@@ -1,0 +1,3 @@
+- name: "system setup | apport | Disable apport  "
+  tags: apport, config,system,setup
+  lineinfile: dest=/etc/default/apport regexp=^enabled= line=enabled=0
