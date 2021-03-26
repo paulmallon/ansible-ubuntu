@@ -3,7 +3,7 @@
 #
 # xfce4 workspace
 #
-- name: xfce4 | general | Set number of workspaces (2)
+- name: xfce4 | workspace | Set number of workspaces (2)
   tags: pm,xfce4,users,workspace 
   become_user: pm
   environment:
@@ -18,7 +18,7 @@
 # xfce4 shortcuts
 #
 - name: xfce4 | shortcut | Remove '/commands/custom/<Primary><Alt>l' 
-  tags: pm,xfce4,users,shortcuts, test
+  tags: pm,xfce4,users,shortcuts
   become_user: pm
   environment:
         DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
@@ -30,7 +30,7 @@
     value_type: string
 
 - name: xfce4 | shortcut | Remove '/commands/default/<Primary><Alt>l' 
-  tags: pm,xfce4,users,shortcuts, test
+  tags: pm,xfce4,users,shortcuts
   become_user: pm
   environment:
         DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
@@ -201,3 +201,32 @@
     property: "/xfwm4/custom/<Shift><Super>Right"
     value_type: string
     value: "tile_up_right_key"
+
+
+#
+# fonts
+#
+
+
+- name: xfce4 | xsettings | FontName 'Noto Sans 9'
+  tags: pm,xfce4,users,fonts
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xsettings
+    property: "/Gtk/FontName"
+    value_type: string
+    value: "Noto Sans 9"
+
+
+- name: xfce4 | xsettings | MonospaceFontName 'Monospace 10'
+  tags: pm,xfce4,users,fonts
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xsettings
+    property: "/Gtk/MonospaceFontName"
+    value_type: string
+    value: "Monospace 10"

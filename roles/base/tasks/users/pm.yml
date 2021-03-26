@@ -33,7 +33,7 @@
     user: "{{ lookup('env', 'USER') }}"
     key: "{{ item }}"
   with_file:
-    - users/pm_id_20210321.pub
+    - pm_id_20210321.pub
 
 - name: "users | ssh-keys | Generate SSH key '{{ lookup('env','HOME') + '/.ssh/id_rsa' }}'"
   tags: pm,ssh,ssh-keys,users
@@ -78,6 +78,18 @@
 #
 # git
 #
+
+- name: "users | git | Create '{{ lookup('env','HOME') }}/git directory'"
+  tags: pm,ssh,users
+  file:
+    path: "{{ lookup('env','HOME') }}/{{ item.dir }}"
+    state: directory
+    owner: "{{ lookup('env', 'USER') }}"
+    group: "{{ lookup('env', 'USER') }}"
+    mode: 0700
+  with_items:
+    - { dir: 'git' }
+
 - name: "users | git | Configure git pull '{{ git.pull }}'"
   become: false
   tags: pm,git,users
@@ -118,4 +130,6 @@
   tags: pm,dotfiles,users
   shell: /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME checkout --force
   become: no
+
+
 

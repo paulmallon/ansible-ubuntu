@@ -1,0 +1,55 @@
+---
+
+- name: "xfce4 | panel | Stop"
+  become: false
+  tags: pm,xfce4,panel,users
+  shell: "xfce4-panel -q"
+ 
+
+- name: xfce4 | panel | Copy panel backup '{{ansible_hostname}}_panel.tar' to /tmp
+  tags: pm,xfce4,panel,users
+  become: false
+  copy:
+    src: "{{ansible_hostname}}_panel.tar"
+    dest: /tmp
+
+
+- name: "xfce4 | panel | Restore panel layout from '{{ansible_hostname}}_panel.tar'"
+  become: false
+  tags: pm,xfce4,panel,users
+  shell: "xfce4-panel-profiles load /tmp/{{ansible_hostname}}_panel.tar"
+
+- name: "xfce4 | spotify-panel | Clone repository from '{{ xfce4_spotify_panel.repourl }}' to '{{ lookup('env','HOME') }}/git/xfce4-spotify-panel'"
+  tags: pm,xfce4,panel,users
+  become: false
+  ansible.builtin.git:
+    repo: '{{ xfce4_spotify_panel.repourl }}'
+    dest: "{{ lookup('env','HOME') }}/git/xfce4-spotify-panel"
+  
+- name: "xfce4 | spotify-panel | Set Command"
+  tags: pm,xfce4,panel,users
+  lineinfile: 
+    dest: /home/pm/.config/xfce4/panel/genmon-6.rc
+    regexp: ^Command=
+    line: Command=/home/pm/git/xfce4-spotify-panel/spotify-panel.sh 
+
+
+- name: "xfce4 | spotify-panel | Set UseLabel"
+  tags: pm,xfce4,panel,users
+  lineinfile: 
+    dest: /home/pm/.config/xfce4/panel/genmon-6.rc
+    regexp: ^UseLabel=
+    line: UseLabel=0
+
+- name: "xfce4 | spotify-panel | Set UpdatePeriod"
+  tags: pm,xfce4,panel,users
+  lineinfile: 
+    dest: /home/pm/.config/xfce4/panel/genmon-6.rc
+    regexp: ^UpdatePeriod=
+    line: UpdatePeriod=5000
+
+
+- name: "xfce4 | spotify-panel | Start"
+  become: false
+  tags: pm,xfce4,panel,users
+  shell: "nohup xfce4-panel &"

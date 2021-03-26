@@ -1,0 +1,10 @@
+- name: software | common | Install common packages
+  tags: software, common
+  apt:
+    state: latest
+    cache_valid_time: '{{ apt.cachetime }}'
+    pkg:
+      - cpupower-gui
+      - xdotool
+      - wmctrl
+  
