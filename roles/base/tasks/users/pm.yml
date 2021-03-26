@@ -105,7 +105,7 @@
   tags: pm,git,users
   shell: "git config --global user.email {{ git.email }}"
 
-- name: "users | git | Configure git push.default '{{git.push }}'"
+- name: "users | git | Configure git push.default '{{ git.push }}'"
   become: false
   tags: pm,git,users
   shell: "git config --global push.default {{ git.push }}"

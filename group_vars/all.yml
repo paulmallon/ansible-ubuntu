@@ -38,5 +38,8 @@ software:
   remmina: false
   cpupower: false
 
-xfce4_spotify_panel:
-  repourl: git@github.com:paulmallon/xfce4-spotify-panel.git
+xfce:
+  install_panel: true
+  panel_backup: default_panel.tar
+  spotify_panel_repo_url: git@github.com:paulmallon/xfce4-spotify-panel.git
+

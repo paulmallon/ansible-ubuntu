@@ -4,27 +4,33 @@
   become: false
   tags: pm,xfce4,panel,users
   shell: "xfce4-panel -q"
+  when: xfce.install_panel is defined and xfce.install_panel == true
  
 
-- name: xfce4 | panel | Copy panel backup '{{ansible_hostname}}_panel.tar' to /tmp
+- name: xfce4 | panel | Copy panel backup '{{ xfce.panel_backup }}' to /tmp
   tags: pm,xfce4,panel,users
   become: false
   copy:
-    src: "{{ansible_hostname}}_panel.tar"
+    src: "{{ xfce.panel_backup }}"
     dest: /tmp
+  when: xfce.install_panel is defined and xfce.install_panel == true
 
 
-- name: "xfce4 | panel | Restore panel layout from '{{ansible_hostname}}_panel.tar'"
+- name: "xfce4 | panel | Restore panel layout from '/tmp/{{ xfce.panel_backup }}'"
   become: false
   tags: pm,xfce4,panel,users
-  shell: "xfce4-panel-profiles load /tmp/{{ansible_hostname}}_panel.tar"
+  shell: "xfce4-panel-profiles load /tmp/{{ xfce.panel_backup }}"
+  when: xfce.install_panel is defined and xfce.install_panel == true
 
-- name: "xfce4 | spotify-panel | Clone repository from '{{ xfce4_spotify_panel.repourl }}' to '{{ lookup('env','HOME') }}/git/xfce4-spotify-panel'"
+
+- name: "xfce4 | spotify-panel | Clone repository from '{{ xfce.spotify_panel_repo_url }}' to '{{ lookup('env','HOME') }}/git/xfce4-spotify-panel'"
   tags: pm,xfce4,panel,users
   become: false
   ansible.builtin.git:
-    repo: '{{ xfce4_spotify_panel.repourl }}'
+    repo: '{{ xfce.spotify_panel_repo_url }}'
     dest: "{{ lookup('env','HOME') }}/git/xfce4-spotify-panel"
+  when: xfce.install_panel is defined and xfce.install_panel == true
+
   
 - name: "xfce4 | spotify-panel | Set Command"
   tags: pm,xfce4,panel,users
@@ -32,6 +38,7 @@
     dest: /home/pm/.config/xfce4/panel/genmon-6.rc
     regexp: ^Command=
     line: Command=/home/pm/git/xfce4-spotify-panel/spotify-panel.sh 
+  when: xfce.install_panel is defined and xfce.install_panel == true
 
 
 - name: "xfce4 | spotify-panel | Set UseLabel"
@@ -40,6 +47,7 @@
     dest: /home/pm/.config/xfce4/panel/genmon-6.rc
     regexp: ^UseLabel=
     line: UseLabel=0
+  when: xfce.install_panel is defined and xfce.install_panel == true
 
 - name: "xfce4 | spotify-panel | Set UpdatePeriod"
   tags: pm,xfce4,panel,users
@@ -47,9 +55,11 @@
     dest: /home/pm/.config/xfce4/panel/genmon-6.rc
     regexp: ^UpdatePeriod=
     line: UpdatePeriod=5000
+  when: xfce.install_panel is defined and xfce.install_panel == true
 
 
-- name: "xfce4 | spotify-panel | Start"
+- name: "xfce4 | panel | Start"
   become: false
   tags: pm,xfce4,panel,users
   shell: "nohup xfce4-panel &"
+  when: xfce.install_panel is defined and xfce.install_panel == true
