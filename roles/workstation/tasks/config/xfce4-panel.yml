@@ -15,6 +15,14 @@
     dest: /tmp
   when: xfce.install_panel is defined and xfce.install_panel == true
 
+- name: "xfce4 | panel | Copy genmon rc backup 'genmon-6.rc' to {{ lookup('env','HOME') }}/.config/xfce4/panel/genmon-6.rc"
+  tags: pm,xfce4,panel,users
+  become: false
+  copy:
+    src: "genmon-6.rc"
+    dest: "{{ lookup('env','HOME') }}/.config/xfce4/panel/genmon-6.rc"
+  when: xfce.install_panel is defined and xfce.install_panel == true
+
 
 - name: "xfce4 | panel | Restore panel layout from '/tmp/{{ xfce.panel_backup }}'"
   become: false
