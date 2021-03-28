@@ -155,7 +155,7 @@
     value: "xfce4-terminal --tab"
 
 - name: xfce4 | shortcut | xfce4-terminal --drop-down 'F1'
-  tags: pm,xfce4,users,shortcuts,test
+  tags: pm,xfce4,users,shortcuts
   become_user: pm
   environment:
         DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
