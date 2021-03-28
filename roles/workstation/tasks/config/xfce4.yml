@@ -121,17 +121,6 @@
     value_type: string
     value: "xfce4-appfinder"
 
-- name: xfce4 | shortcut | xfce4-terminal --tab '<Super>t'
-  tags: pm,xfce4,users,shortcuts
-  become_user: pm
-  environment:
-        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
-  xfconf:
-    channel: xfce4-keyboard-shortcuts
-    property: "/commands/custom/<Super>t"
-    value_type: string
-    value: "xfce4-terminal --tab"
-
 - name: xfce4 | shortcut | xflock4 '<Super>l'
   tags: pm,xfce4,users,shortcuts
   become_user: pm
@@ -153,6 +142,29 @@
     property: "/commands/custom/<Primary><Alt>Delete"
     value_type: string
     value: "xflock4"
+  
+- name: xfce4 | shortcut | xfce4-terminal --tab '<Super>t'
+  tags: pm,xfce4,users,shortcuts
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "/commands/custom/<Super>t"
+    value_type: string
+    value: "xfce4-terminal --tab"
+
+- name: xfce4 | shortcut | xfce4-terminal --drop-down 'F1'
+  tags: pm,xfce4,users,shortcuts,test
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "/commands/custom/F1"
+    value_type: string
+    value: "xfce4-terminal --drop-down"
+
 
 #
 # xfce4 window shortcuts
@@ -230,3 +242,6 @@
     property: "/Gtk/MonospaceFontName"
     value_type: string
     value: "Monospace 10"
+
+
+  #
