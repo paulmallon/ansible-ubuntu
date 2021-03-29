@@ -1,6 +1,32 @@
 ---
 
 #
+# xfce4 fonts
+#
+- name: xfce4 | xsettings | FontName 'Noto Sans 9'
+  tags: pm,xfce4,users,fonts
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xsettings
+    property: "/Gtk/FontName"
+    value_type: string
+    value: "Noto Sans 9"
+
+- name: xfce4 | xsettings | MonospaceFontName 'Monospace 10'
+  tags: pm,xfce4,users,fonts
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xsettings
+    property: "/Gtk/MonospaceFontName"
+    value_type: string
+    value: "Monospace 10"
+
+
+#
 # xfce4 workspace
 #
 - name: xfce4 | workspace | Set number of workspaces (2)
@@ -14,8 +40,9 @@
     value_type: int
     value: "2"
 
+
 #
-# xfce4 shortcuts
+# xfce4 shortcuts - Remove application specific keybindings
 #
 - name: xfce4 | shortcut | Remove '/commands/custom/<Primary><Alt>l' 
   tags: pm,xfce4,users,shortcuts
@@ -65,7 +92,34 @@
     value: notset
     value_type: string
 
+- name: xfce4 | shortcut | Remove '/xfwm4/default/<Alt>F7' 
+  tags: pm,xfce4,users,shortcuts
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "/xfwm4/default/<Alt>F7"
+    state: absent
+    value: notset
+    value_type: string
 
+- name: xfce4 | shortcut | Remove '/xfwm4/custom/<Alt>F7'
+  tags: pm,xfce4,users,shortcuts
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "/xfwm4/custom/<Alt>F7"
+    state: absent
+    value: notset
+    value_type: string
+
+
+#
+# xfce4 shortcuts - Add application launch keybindings
+#
 - name: xfce4 | shortcut | Code '<Super>e' 
   tags: pm,xfce4,users,shortcuts
   become_user: pm
@@ -143,7 +197,7 @@
     value_type: string
     value: "xflock4"
   
-- name: xfce4 | shortcut | xfce4-terminal --tab '<Super>t'
+- name: xfce4 | shortcut | xfce4-terminal --window '<Super>t'
   tags: pm,xfce4,users,shortcuts
   become_user: pm
   environment:
@@ -152,7 +206,7 @@
     channel: xfce4-keyboard-shortcuts
     property: "/commands/custom/<Super>t"
     value_type: string
-    value: "xfce4-terminal --tab"
+    value: "xfce4-terminal --window"
 
 - name: xfce4 | shortcut | xfce4-terminal --drop-down 'F1'
   tags: pm,xfce4,users,shortcuts
@@ -167,7 +221,7 @@
 
 
 #
-# xfce4 window shortcuts
+# xfce4 shortcuts - window management keybindings
 #
 - name: xfce4 | shortcut | tile_down_left_key '<Primary><Super>Left'
   tags: pm,xfce4,users,shortcut
@@ -214,34 +268,48 @@
     value_type: string
     value: "tile_up_right_key"
 
-
-#
-# fonts
-#
-
-
-- name: xfce4 | xsettings | FontName 'Noto Sans 9'
-  tags: pm,xfce4,users,fonts
+- name: xfce4 | shortcut | tile_down_key '<Super>Down'
+  tags: pm,xfce4,users,shortcut
   become_user: pm
   environment:
         DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
   xfconf:
-    channel: xsettings
-    property: "/Gtk/FontName"
+    channel: xfce4-keyboard-shortcuts
+    property: "/xfwm4/custom/<Super>Down"
     value_type: string
-    value: "Noto Sans 9"
+    value: "tile_down_key"
 
-
-- name: xfce4 | xsettings | MonospaceFontName 'Monospace 10'
-  tags: pm,xfce4,users,fonts
+- name: xfce4 | shortcut | tile_down_key '<Super>Up'
+  tags: pm,xfce4,users,shortcut
   become_user: pm
   environment:
         DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
   xfconf:
-    channel: xsettings
-    property: "/Gtk/MonospaceFontName"
+    channel: xfce4-keyboard-shortcuts
+    property: "/xfwm4/custom/<Super>Up"
     value_type: string
-    value: "Monospace 10"
+    value: "tile_up_key"
+
+- name: xfce4 | shortcut | tile_down_key '<Super>Left'
+  tags: pm,xfce4,users,shortcut
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "/xfwm4/custom/<Super>Left"
+    value_type: string
+    value: "tile_left_key"
+
+- name: xfce4 | shortcut | tile_down_key '<Super>Right'
+  tags: pm,xfce4,users,shortcut
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "/xfwm4/custom/<Super>Right"
+    value_type: string
+    value: "tile_right_key"
 
 
-  #

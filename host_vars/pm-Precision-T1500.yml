@@ -18,3 +18,5 @@ software:
   solaar: true
   remmina: true
   cpupower: true
+xfce:
+  install_panel: true
