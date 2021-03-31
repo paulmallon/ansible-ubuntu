@@ -116,6 +116,54 @@
     value: notset
     value_type: string
 
+- name: xfce4 | shortcut | Remove '/xfwm4/custom/<Alt>Delete'
+  tags: pm,xfce4,users,shortcuts
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "/xfwm4/custom/<Alt>Delete"
+    state: absent
+    value: notset
+    value_type: string
+
+- name: xfce4 | shortcut | Remove '/xfwm4/custom/<Alt>Insert'
+  tags: pm,xfce4,users,shortcuts
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "/xfwm4/custom/<Alt>Insert"
+    state: absent
+    value: notset
+    value_type: string
+
+- name: xfce4 | shortcut | Remove '/xfwm4/default/<Alt>Insert'
+  tags: pm,xfce4,users,shortcuts
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "/xfwm4/default/<Alt>Insert"
+    state: absent
+    value: notset
+    value_type: string
+
+- name: xfce4 | shortcut | Remove '/xfwm4/default/<Alt>Delete'
+  tags: pm,xfce4,users,shortcuts
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "/xfwm4/default/<Alt>Delete"
+    state: absent
+    value: notset
+    value_type: string
+
 
 #
 # xfce4 shortcuts - Add application launch keybindings
