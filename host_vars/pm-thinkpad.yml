@@ -20,3 +20,5 @@ software:
   cpupower: true
 xfce:
   install_panel: false
+  install_terminal_theme: true
+  terminal_theme_repo_url: git@github.com:arcticicestudio/nord-xfce-terminal.git

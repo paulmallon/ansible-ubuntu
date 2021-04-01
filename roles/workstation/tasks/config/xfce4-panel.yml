@@ -35,7 +35,7 @@
   tags: pm,xfce4,panel,users
   become: false
   ansible.builtin.git:
-    repo: '{{ xfce.spotify_panel_repo_url }}'
+    repo: "{{ xfce.spotify_panel_repo_url }}"
     dest: "{{ lookup('env','HOME') }}/git/xfce4-spotify-panel"
   when: xfce.install_panel is defined and xfce.install_panel == true
 
@@ -43,7 +43,7 @@
 - name: "xfce4 | spotify-panel | Set Command"
   tags: pm,xfce4,panel,users
   lineinfile: 
-    dest: /home/pm/.config/xfce4/panel/genmon-6.rc
+    dest: "{{ lookup('env','HOME') }}/.config/xfce4/panel/genmon-6.rc"
     regexp: ^Command=
     line: Command=/home/pm/git/xfce4-spotify-panel/spotify-panel.sh 
   when: xfce.install_panel is defined and xfce.install_panel == true
@@ -52,7 +52,7 @@
 - name: "xfce4 | spotify-panel | Set UseLabel"
   tags: pm,xfce4,panel,users
   lineinfile: 
-    dest: /home/pm/.config/xfce4/panel/genmon-6.rc
+    dest: "{{ lookup('env','HOME') }}/.config/xfce4/panel/genmon-6.rc"
     regexp: ^UseLabel=
     line: UseLabel=0
   when: xfce.install_panel is defined and xfce.install_panel == true
@@ -60,7 +60,7 @@
 - name: "xfce4 | spotify-panel | Set UpdatePeriod"
   tags: pm,xfce4,panel,users
   lineinfile: 
-    dest: /home/pm/.config/xfce4/panel/genmon-6.rc
+    dest: "{{ lookup('env','HOME') }}/.config/xfce4/panel/genmon-6.rc"
     regexp: ^UpdatePeriod=
     line: UpdatePeriod=5000
   when: xfce.install_panel is defined and xfce.install_panel == true

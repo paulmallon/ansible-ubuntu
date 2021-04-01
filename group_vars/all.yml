@@ -42,4 +42,6 @@ xfce:
   install_panel: false
   panel_backup: default_panel.tar
   spotify_panel_repo_url: git@github.com:paulmallon/xfce4-spotify-panel.git
+  install_terminal_theme: true
+  terminal_theme_repo_url: git@github.com:arcticicestudio/nord-xfce-terminal.git
 

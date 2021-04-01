@@ -1,8 +1,9 @@
 ---
 
 - block:
-  - import_tasks: config/xfce4.yml
+  - import_tasks: config/xfce4-misc.yml
   - import_tasks: config/xfce4-panel.yml
+  - import_tasks: config/xfce4-shortcuts.yml
   - import_tasks: software/code.yml
   - import_tasks: software/intellij.yml
   - import_tasks: software/java.yml
