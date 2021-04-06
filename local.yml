@@ -7,16 +7,20 @@
   tags: always
   become: true
   pre_tasks:
-    - name: "pre-run | Load variables from 'host_vars/{{ansible_hostname}}.yml'"
-      include_vars:
-        file: "host_vars/{{ansible_hostname}}.yml"
+#    - name: "pre-run | Load variables from 'host_vars/{{ansible_hostname}}.yml'"
+#      include_vars:
+#        file: "host_vars/{{ansible_hostname}}.yml"
+
     - name: pre-run | Update apt cache 
       tags: always
       apt: 
         update_cache: '{{ apt.update_cache }}'
       changed_when: False
-      when: ansible_distribution in ["Debian", "Ubuntu"]
 
+    - name: Display all variables/facts known for a host
+      ansible.builtin.debug:
+        var: hostvars[inventory_hostname]
+        verbosity: 4
 #
 # Roles
 #

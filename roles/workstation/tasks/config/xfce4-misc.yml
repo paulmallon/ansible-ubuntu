@@ -41,17 +41,15 @@
     value: "2"
 
 
-
 #
 # Terminal theme
 #
-
 
 - name: "xfce4 | terminal theme | Clone repository from '{{ xfce.terminal_theme_repo_url }}' to '{{ lookup('env','HOME') }}/git/nord-xfce-terminal'"
   tags: pm,xfce4,terminal,theme,users
   become: false
   ansible.builtin.git:
-    repo: '{{ xfce.terminal_theme_repo_url }}'
+    repo: "{{ xfce.terminal_theme_repo_url }}"
     dest: "{{ lookup('env','HOME') }}/git/nord-xfce-terminal"
   when: xfce.install_terminal_theme is defined and xfce.install_terminal_theme == true
 
