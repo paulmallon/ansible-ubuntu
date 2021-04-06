@@ -1,6 +1,6 @@
 ---
 
-- name: "xfce4 | panel | Stop"
+- name: "xfce4 | panel | Stop xfce4-panel"
   become: false
   tags: pm,xfce4,panel,users
   shell: "xfce4-panel -q"
@@ -60,7 +60,7 @@
     line: UpdatePeriod=5000
   when: xfce.install_panel is defined and xfce.install_panel == true
 
-- name: "xfce4 | panel | Start"
+- name: "xfce4 | panel | Start xfce4-panel"
   become: false
   tags: pm,xfce4,panel,users
   shell: "nohup xfce4-panel &"

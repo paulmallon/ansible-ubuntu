@@ -5,19 +5,6 @@ git:
   email: "paul.mallon@pricerunner.com"
   pull: "ff only"
   push: upstream
-system:
-  swappiness_value: 5
-  provisioning: true
-software: 
-  code: true
-  intellij: true
-  java: true
-  signal: true
-  spotify: true
-  teams: true
-  solaar: true
-  remmina: true
-  cpupower: true
 xfce:
   install_panel: false
   install_terminal_theme: true

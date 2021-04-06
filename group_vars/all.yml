@@ -1,45 +1,38 @@
 ---
 
 healthcheck_uuid: 9e58a7b9-29e4-42f0-94a6-c780e52439c7
-
 system:
-  swappiness_value: 20
-  provisioning: false
+  swappiness_value: 10
+  provisioning: true
   disable_apport: true
-
 apt:
   autoremove: yes
   autoclean: yes
   update_cache: yes
   cachetime: 3600
-
 ssh:
   start: true
   service_enabled: true
   password_auth: false
   root_login: false
-
 dotfiles:
   repourl: git@github.com:paulmallon/cfg.git
-
 ansible:
   repourl: git@github.com:paulmallon/ansible-ubuntu.git
   user: pm 
-  ansible_cron_minute: 5
-
+  ansible_cron_minute: "*/15"
 software: 
-  code: false
-  intellij: false
-  java: false
-  signal: false
-  spotify: false
-  teams: false
-  solaar: false
-  remmina: false
-  cpupower: false
-
+  code: true
+  intellij: true
+  java: true
+  signal: true
+  spotify: true
+  teams: true
+  solaar: true
+  remmina: true
+  cpupower: true
 xfce:
-  install_panel: false
+  install_panel: true
   panel_backup: default_panel.tar
   spotify_panel_repo_url: git@github.com:paulmallon/xfce4-spotify-panel.git
   install_terminal_theme: true

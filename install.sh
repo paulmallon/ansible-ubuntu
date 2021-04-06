@@ -17,7 +17,7 @@ fi
 
 
 echo "Run ansible with :"
-echo "  ansible-playbook ansible-desktop.yml"
+echo "  ansible-playbook local.yml --ask-become-pass"
 
 
 
