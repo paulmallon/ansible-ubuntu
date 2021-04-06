@@ -32,7 +32,7 @@ software:
   remmina: true
   cpupower: true
 xfce:
-  install_panel: true
+  install_panel: false
   panel_backup: default_panel.tar
   spotify_panel_repo_url: git@github.com:paulmallon/xfce4-spotify-panel.git
   install_terminal_theme: true
