@@ -1,0 +1,314 @@
+
+** (wrapper-2.0:3154135): WARNING **: 11:07:08.734: could not get output property
+
+(wrapper-2.0:3154133): GLib-GIO-CRITICAL **: 11:07:08.748: g_file_new_for_path: assertion 'path != NULL' failed
+
+(wrapper-2.0:3154133): GLib-GIO-CRITICAL **: 11:07:08.748: g_file_monitor_file: assertion 'G_IS_FILE (file)' failed
+
+(wrapper-2.0:3154133): GLib-GObject-WARNING **: 11:07:08.748: invalid (NULL) pointer instance
+
+(wrapper-2.0:3154133): GLib-GObject-CRITICAL **: 11:07:08.748: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+(wrapper-2.0:3154133): Gtk-WARNING **: 11:07:08.748: Attempting to add a widget with type GtkToggleButton to a container of type XfcePanelPlugin, but the widget is already inside a container of type XfcePanelPlugin, please remove the widget from its existing container first.
+
+(wrapper-2.0:3154131): Gtk-WARNING **: 11:07:08.790: gtk_widget_size_allocate(): attempt to allocate widget with width -1 and height 22
+
+(wrapper-2.0:3154133): Gtk-WARNING **: 11:07:08.848: Negative content width -1 (allocation 1, extents 1x1) while allocating gadget (node button, owner GtkToggleButton)
+
+(wrapper-2.0:3154135): Gtk-WARNING **: 11:07:08.853: Negative content width -1 (allocation 1, extents 1x1) while allocating gadget (node button, owner PowerManagerButton)
+
+(wrapper-2.0:3154128): Gtk-WARNING **: 11:07:08.865: Negative content width -1 (allocation 1, extents 1x1) while allocating gadget (node button, owner GtkToggleButton)
+
+(wrapper-2.0:3154142): Gtk-WARNING **: 11:07:08.865: Negative content width -1 (allocation 1, extents 1x1) while allocating gadget (node button, owner PulseaudioButton)
+blueman-manager version 2.1.3 starting
+There is an instance already running
+blueman-manager version 2.1.3 starting
+There is an instance already running
+blueman-manager version 2.1.3 starting
+There is an instance already running
+blueman-manager version 2.1.3 starting
+There is an instance already running
+blueman-manager version 2.1.3 starting
+There is an instance already running
+blueman-manager version 2.1.3 starting
+There is an instance already running
+blueman-manager version 2.1.3 starting
+There is an instance already running
+blueman-manager version 2.1.3 starting
+
+(xfce4-panel:3154118): Gtk-CRITICAL **: 12:22:40.082: gtk_icon_theme_load_icon: assertion 'icon_name != NULL' failed
+
+(xfce4-panel:3154118): Gtk-CRITICAL **: 12:22:40.083: gtk_icon_theme_load_icon: assertion 'icon_name != NULL' failed
+
+(xfce4-panel:3154118): Gtk-CRITICAL **: 12:22:40.101: gtk_icon_theme_load_icon: assertion 'icon_name != NULL' failed
+blueman-manager version 2.1.3 starting
+There is an instance already running
+blueman-manager version 2.1.3 starting
+There is an instance already running
+blueman-manager version 2.1.3 starting
+There is an instance already running
+blueman-manager version 2.1.3 starting
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:23:06.947: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:23:10.957: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:23:14.961: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:23:18.960: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:23:22.974: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:23:26.976: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:23:30.991: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:23:34.973: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:23:38.985: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:23:42.985: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:23:46.993: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:23:50.994: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:23:54.991: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:23:59.000: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:24:03.019: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:24:07.030: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:24:10.975: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:24:15.025: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:24:19.025: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:24:23.027: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:24:27.032: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:24:31.028: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:24:34.996: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:24:39.028: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:24:43.041: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:24:47.052: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:24:51.055: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:24:55.053: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:24:59.082: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:25:03.063: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:25:07.073: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:25:11.080: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:25:15.078: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:25:19.049: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:25:23.079: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:25:27.108: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:25:31.089: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:25:35.093: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:25:39.099: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:25:43.104: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:25:47.122: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:25:51.113: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:25:55.139: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:25:59.115: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:26:03.135: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:26:07.134: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:26:11.098: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:26:15.131: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:26:19.105: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:26:23.133: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:26:27.143: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:26:31.162: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:26:35.168: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:26:39.159: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:26:43.163: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:26:47.173: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:26:51.136: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:26:55.180: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:26:59.179: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:27:03.185: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:27:07.184: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:27:11.178: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:27:15.198: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:27:19.194: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:27:23.193: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:27:27.213: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:27:31.216: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:27:35.173: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:27:39.224: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:27:43.212: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:27:47.221: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:27:51.222: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:27:55.227: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:27:59.226: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:28:03.228: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:28:07.238: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:28:11.242: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:28:15.257: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:28:19.254: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:28:23.251: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:28:27.271: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:28:31.263: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:28:35.269: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:28:39.253: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:28:43.277: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:28:47.278: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:28:51.282: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:28:55.285: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:28:59.286: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:29:03.292: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:29:07.297: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:29:11.296: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:29:15.309: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:29:19.311: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:29:23.327: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:29:27.311: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:29:31.319: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:29:35.313: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:29:39.300: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:29:43.334: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:29:47.341: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:29:51.347: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:29:55.345: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:29:59.350: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:30:03.353: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:30:07.363: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:30:11.367: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:30:15.364: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:30:19.381: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:30:23.344: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:30:27.382: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:30:31.379: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:30:35.396: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+
+(wrapper-2.0:3154129): Gtk-WARNING **: 18:30:39.397: Failed to set text 'Pig&Dan - Paradise Lost' from markup due to error parsing markup: Error on line 1: Entity did not end with a semicolon; most likely you used an ampersand character without intending to start an entity — escape ampersand as &amp;
+blueman-manager version 2.1.3 starting
+There is an instance already running
+blueman-manager version 2.1.3 starting
+There is an instance already running
+xfce4-panel-Message: 11:52:41.374: Plugin notification-plugin-6 has been automatically restarted after crash.
+xfce4-panel-Message: 11:52:41.449: Plugin whiskermenu-1 has been automatically restarted after crash.
+xfce4-panel-Message: 11:52:41.450: Plugin genmon-21 has been automatically restarted after crash.
+xfce4-panel-Message: 11:52:41.450: Plugin mailwatch-14 has been automatically restarted after crash.
+xfce4-panel-Message: 11:52:41.450: Plugin cpugraph-13 has been automatically restarted after crash.
+xfce4-panel-Message: 11:52:41.450: Plugin systray-5 has been automatically restarted after crash.
+xfce4-panel-Message: 11:52:41.450: Plugin indicator-7 has been automatically restarted after crash.
+xfce4-panel-Message: 11:52:41.450: Plugin power-manager-plugin-9 has been automatically restarted after crash.
+xfce4-panel-Message: 11:52:41.450: Plugin pulseaudio-10 has been automatically restarted after crash.
+xfce4-panel-Message: 11:52:41.450: Plugin actions-8 has been automatically restarted after crash.
+
+(wrapper-2.0:2160354): GLib-GIO-CRITICAL **: 11:52:41.583: g_file_new_for_path: assertion 'path != NULL' failed
+
+(wrapper-2.0:2160354): GLib-GIO-CRITICAL **: 11:52:41.583: g_file_monitor_file: assertion 'G_IS_FILE (file)' failed
+
+(wrapper-2.0:2160354): GLib-GObject-WARNING **: 11:52:41.583: invalid (NULL) pointer instance
+
+(wrapper-2.0:2160354): GLib-GObject-CRITICAL **: 11:52:41.583: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+(wrapper-2.0:2160354): Gtk-WARNING **: 11:52:41.583: Attempting to add a widget with type GtkToggleButton to a container of type XfcePanelPlugin, but the widget is already inside a container of type XfcePanelPlugin, please remove the widget from its existing container first.
+
+(wrapper-2.0:2160354): Gtk-WARNING **: 11:52:41.638: Negative content width -1 (allocation 1, extents 1x1) while allocating gadget (node button, owner GtkToggleButton)
+
+** (wrapper-2.0:2160363): WARNING **: 11:52:41.818: could not get output property
+
+(wrapper-2.0:2160360): Gtk-WARNING **: 11:52:41.824: gtk_widget_size_allocate(): attempt to allocate widget with width -1 and height 22
+
+(wrapper-2.0:2160357): Gtk-WARNING **: 11:52:41.880: Negative content width -1 (allocation 1, extents 1x1) while allocating gadget (node button, owner GtkToggleButton)
+
+(wrapper-2.0:2160364): Gtk-WARNING **: 11:52:41.898: Negative content width -1 (allocation 1, extents 1x1) while allocating gadget (node button, owner PulseaudioButton)
+
+(wrapper-2.0:2160363): Gtk-WARNING **: 11:52:41.904: Negative content width -1 (allocation 1, extents 1x1) while allocating gadget (node button, owner PowerManagerButton)

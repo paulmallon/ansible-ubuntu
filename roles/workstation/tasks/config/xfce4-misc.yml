@@ -1,0 +1,63 @@
+---
+
+#
+# Fonts
+#
+- name: xfce4 | xsettings | FontName 'Noto Sans 9'
+  tags: pm,xfce4,users,fonts
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xsettings
+    property: "/Gtk/FontName"
+    value_type: string
+    value: "Noto Sans 9"
+
+- name: xfce4 | xsettings | MonospaceFontName 'Monospace 10'
+  tags: pm,xfce4,users,fonts
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xsettings
+    property: "/Gtk/MonospaceFontName"
+    value_type: string
+    value: "Monospace 10"
+
+
+#
+# Workspaces
+#
+- name: xfce4 | workspace | Set number of workspaces (2)
+  tags: pm,xfce4,users,workspace 
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfwm4
+    property: /general/workspace_count
+    value_type: int
+    value: "2"
+
+
+
+#
+# Terminal theme
+#
+
+
+- name: "xfce4 | terminal theme | Clone repository from '{{ xfce.terminal_theme_repo_url }}' to '{{ lookup('env','HOME') }}/git/nord-xfce-terminal'"
+  tags: pm,xfce4,terminal,theme,users
+  become: false
+  ansible.builtin.git:
+    repo: '{{ xfce.terminal_theme_repo_url }}'
+    dest: "{{ lookup('env','HOME') }}/git/nord-xfce-terminal"
+  when: xfce.install_terminal_theme is defined and xfce.install_terminal_theme == true
+
+- name: "xfce4 | terminal theme | Install Nord terminal theme"
+  become: false
+  tags: pm,xfce4,terminal,theme,users
+  shell: "cp -f {{ lookup('env','HOME') }}/git/nord-xfce-terminal/src/nord.theme {{ lookup('env','HOME') }}/.local/share/xfce4/terminal/colorschemes"
+  when: xfce.install_terminal_theme is defined and xfce.install_terminal_theme == true
+
