@@ -4,7 +4,7 @@
 # Fonts
 #
 - name: xfce4 | xsettings | FontName 'Noto Sans 9'
-  tags: pm,xfce4,users,fonts
+  tags: pm,xfce4,users,fonts,theme
   become_user: pm
   environment:
         DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
@@ -15,7 +15,7 @@
     value: "Noto Sans 9"
 
 - name: xfce4 | xsettings | MonospaceFontName 'Monospace 10'
-  tags: pm,xfce4,users,fonts
+  tags: pm,xfce4,users,fonts, theme
   become_user: pm
   environment:
         DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus

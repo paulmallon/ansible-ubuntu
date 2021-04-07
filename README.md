@@ -2,22 +2,26 @@
 
  ## Prerequisite
 
-     sudo apt install git
+     Ansible 
 
 
 ## Installation
     
-Install ansible and run playbook
-
-    git clone git@github.com:paulmallon/ansible-ubuntu.git
-    cd ansible-ubuntu
+Install current version of Ansible 
+    
     ./install.sh
+
+Install required roles
+
+    ansible-galaxy install -r requirements.yml
+
+Deploy with ansible-playbook
+
     ansible-playbook local.yml --ask-become-pass
 
-Run playbook with ansible-pull
+or run playbook with ansible-pull
 
     ansible-pull -U git@github.com:paulmallon/ansible-ubuntu.git
-
 
 
 
@@ -30,37 +34,44 @@ Run playbook with ansible-pull
 
 ## Tags description
 
-| Tag                      | Description
-|--------------------------|----------------------------------------------
-| pm                       | Setup user
-| dotfiles                 | Git tracking of configuration files
-| config                   | Configuration tasks
-| ufw                      | Enable Uncomplicated Firewall and allow OpenSSH server
-| software                 | Install software packages
-| common                   | Install common packages (see list below)
-| dev                      | Install development related software
-| code                     | Install Visual Studio Code
-| intelij                  | Install InteliJ
-| java                     | Install OpenJDK 15
-| spotify                  | Install Spotify
-| teams                    | Install Teams
-| git                      | Configure git
-| ssh-server               | Install OpenSSH server
-| ssh                      | Setup SSH
-| users                    | Setup users
-| ssh-keys                 | Setup SSH keys
-| ansible                  | Setup ansible provitioning
-| ansible-cron             | Setup ansible cron job
-| ansible-setup            | Setup ansible
-| cron                     | Setup cron jobs
-| swappiness               | Configure system swappiness
-| sysctl                   | System configuration
-| system                   | System configuration
-| swappiness               | Configure system swappiness
+| Tag                       | Description
+|---------------------------|----------------------------------------------
+| pm                        | Setup user
+| dotfiles                  | Git tracking of configuration files
+| config                    | Configuration tasks
+| ufw                       | Enable Uncomplicated Firewall and allow OpenSSH server
+| software                  | Install software packages
+| common                    | Install common packages (see list below)
+| dev                       | Install development related software
+| code                      | Install Visual Studio Code
+| intelij                   | Install InteliJ
+| java                      | Install OpenJDK 15
+| spotify                   | Install Spotify
+| teams                     | Install Teams
+| git                       | Configure git
+| ssh-server                | Install OpenSSH server
+| ssh                       | Setup SSH
+| users                     | Setup users
+| ssh-keys                  | Setup SSH keys
+| ansible                   | Setup ansible provitioning
+| ansible-cron              | Setup ansible cron job
+| ansible-setup             | Setup ansible
+| cron                      | Setup cron jobs
+| swappiness                | Configure system swappiness
+| sysctl                    | System configuration
+| system                    | System configuration
+| swappiness                | Configure system swappiness
+| xfce4                     | Configure XFCE4 settings
+| panel                     | Configure XFCE4 panel
+| workspace                 | Configure XFCE4 workspaces
+| terminal                  | Configure XFCE4 terminal 
+| theme                     | Configure XFCE4 theme
+| shortcuts                 | Configure XFCE4 panel
+| Docker                    | Install docker and docker-compose
 
 Example command
 
-    ansible-playbook ansible-desktop.yml --tags <sometag>
+    ansible-playbook ansible-desktop.yml -K --tags <sometag>
 
 ## Common packages
 

@@ -24,7 +24,7 @@
 
     
 #
-# Roles
+# Install roles
 #
 - hosts: all
   tags: base
@@ -37,6 +37,14 @@
   become: true
   roles:
     - workstation
+
+- hosts: all
+  tags: docker
+  become: true
+  roles:
+    - role: geerlingguy.docker  
+      when: docker is defined and docker == true
+
 
 #
 # Post tasks

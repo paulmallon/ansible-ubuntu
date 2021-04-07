@@ -1,6 +1,6 @@
 ---
 
-- block:
+- block:  
   - import_tasks: config/xfce4-misc.yml
   - import_tasks: config/xfce4-panel.yml
   - import_tasks: config/xfce4-shortcuts.yml
@@ -13,3 +13,4 @@
   - import_tasks: software/solaar.yml
   - import_tasks: software/remmina.yml
   - import_tasks: software/common.yml
+  

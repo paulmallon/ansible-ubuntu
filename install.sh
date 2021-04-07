@@ -16,6 +16,8 @@ else
 fi
 
 
+echo "Install requirments:"
+echo " ansible-galaxy install -r requirements"
 echo "Run ansible with :"
 echo "  ansible-playbook local.yml --ask-become-pass"
 

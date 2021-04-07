@@ -1,6 +1,7 @@
 ---
 
 healthcheck_uuid: 9e58a7b9-29e4-42f0-94a6-c780e52439c7
+docker: true
 system:
   swappiness_value: 10
   provisioning: true
