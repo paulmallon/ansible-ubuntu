@@ -3,6 +3,31 @@
 #
 # xfce4 shortcuts - Remove application specific keybindings
 #
+- name: xfce4 | shortcut | Remove '/commands/custom/<Super>m' 
+  tags: pm,xfce4,users,shortcuts
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "/commands/custom/<Super>m"
+    state: absent
+    value: notset
+    value_type: string
+
+- name: xfce4 | shortcut | Remove '/commands/default/<Super>m' 
+  tags: pm,xfce4,users,shortcuts
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "/commands/default/<Super>m"
+    state: absent
+    value: notset
+    value_type: string
+
+
 - name: xfce4 | shortcut | Remove '/commands/custom/<Primary><Alt>l' 
   tags: pm,xfce4,users,shortcuts
   become_user: pm
@@ -230,8 +255,19 @@
 #
 # xfce4 shortcuts - window management keybindings
 #
+- name: xfce4 | shortcut | tile_down_left_key '<Super>m'
+  tags: pm,xfce4,users,shortcuts
+  become_user: pm
+  environment:
+        DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+  xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "/xfwm4/custom/<Super>m"
+    value_type: string
+    value: "maximize_window_key"
+    
 - name: xfce4 | shortcut | tile_down_left_key '<Primary><Super>Left'
-  tags: pm,xfce4,users,shortcut
+  tags: pm,xfce4,users,shortcuts
   become_user: pm
   environment:
         DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
@@ -243,7 +279,7 @@
 
 
 - name: xfce4 | shortcut | tile_down_right_key '<Primary><Super>Right'
-  tags: pm,xfce4,users,shortcut
+  tags: pm,xfce4,users,shortcuts
   become_user: pm
   environment:
         DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
@@ -254,7 +290,7 @@
     value: "tile_down_right_key"
 
 - name: xfce4 | shortcut | tile_up_left_key '<Shift><Super>Left'
-  tags: pm,xfce4,users,shortcut
+  tags: pm,xfce4,users,shortcuts
   become_user: pm
   environment:
         DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
@@ -265,7 +301,7 @@
     value: "tile_up_left_key"
 
 - name: xfce4 | shortcut | tile_up_right_key '<Shift><Super>Right'
-  tags: pm,xfce4,users,shortcut
+  tags: pm,xfce4,users,shortcuts
   become_user: pm
   environment:
         DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
@@ -276,7 +312,7 @@
     value: "tile_up_right_key"
 
 - name: xfce4 | shortcut | tile_down_key '<Super>Down'
-  tags: pm,xfce4,users,shortcut
+  tags: pm,xfce4,users,shortcuts
   become_user: pm
   environment:
         DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
@@ -287,7 +323,7 @@
     value: "tile_down_key"
 
 - name: xfce4 | shortcut | tile_down_key '<Super>Up'
-  tags: pm,xfce4,users,shortcut
+  tags: pm,xfce4,users,shortcuts
   become_user: pm
   environment:
         DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
@@ -298,7 +334,7 @@
     value: "tile_up_key"
 
 - name: xfce4 | shortcut | tile_down_key '<Super>Left'
-  tags: pm,xfce4,users,shortcut
+  tags: pm,xfce4,users,shortcuts
   become_user: pm
   environment:
         DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
@@ -309,7 +345,7 @@
     value: "tile_left_key"
 
 - name: xfce4 | shortcut | tile_down_key '<Super>Right'
-  tags: pm,xfce4,users,shortcut
+  tags: pm,xfce4,users,shortcuts
   become_user: pm
   environment:
         DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
