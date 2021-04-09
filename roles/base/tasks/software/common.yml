@@ -41,5 +41,5 @@
       - lm-sensors
       - tldr
       - pygmentize
-
-  
+      - dos2unix
+      - libxml2-utils
