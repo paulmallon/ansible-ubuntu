@@ -40,5 +40,6 @@
       - nomad
       - lm-sensors
       - tldr
+      - pygmentize
 
   
