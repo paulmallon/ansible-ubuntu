@@ -1,6 +1,5 @@
 ---
 
-
 #
 # Restore panel layout
 #
@@ -18,20 +17,17 @@
     src: "{{ xfce.panel_backup }}"
     dest: /tmp
   when: xfce.install_panel is defined and xfce.install_panel == true
-  ignore_errors: yes
-
+  
 - name: "xfce4 | panel | Restore panel layout from '/tmp/{{ xfce.panel_backup }}'"
   become: false
   tags: pm,xfce4,panel,users
   shell: "xfce4-panel-profiles load /tmp/{{ xfce.panel_backup }}"
   when: xfce.install_panel is defined and xfce.install_panel == true
-  ignore_errors: yes
-
+  
 
 #
 # Spotify panel
 #
-
 - name: "xfce4 | spotify-panel | Clone repository from '{{ xfce.spotify_panel_repo_url }}' to '{{ lookup('env','HOME') }}/git/xfce4-spotify-panel'"
   tags: pm,xfce4,panel,users
   become: false
@@ -73,11 +69,9 @@
   when: xfce.install_panel is defined and xfce.install_panel == true
 
 
-
 #
 # Start panel
 #
-
 - name: "xfce4 | panel | Start xfce4-panel"
   become: false
   tags: pm,xfce4,panel,users
