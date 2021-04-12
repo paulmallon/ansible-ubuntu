@@ -80,7 +80,7 @@
 #
 
 - name: "users | git | Create '{{ lookup('env','HOME') }}/git directory'"
-  tags: pm,ssh,users
+  tags: pm,git,users
   file:
     path: "{{ lookup('env','HOME') }}/{{ item.dir }}"
     state: directory
