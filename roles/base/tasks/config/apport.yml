@@ -1,4 +1,4 @@
 - name: "system setup | crash interception | Disable apport"
-  tags: apport, config,system,setup
+  tags: apport,config,system,setup
   lineinfile: dest=/etc/default/apport regexp=^enabled= line=enabled=0
   when: system.disable_apport is defined and system.disable_apport == true

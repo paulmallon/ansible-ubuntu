@@ -36,15 +36,10 @@
   tags: workstation
   become: true
   roles:
-    - workstation
-
-- hosts: all
-  tags: docker
-  become: true
-  roles:
+    - role: workstation
     - role: geerlingguy.docker  
       when: docker is defined and docker == true
-
+  
 
 #
 # Post tasks

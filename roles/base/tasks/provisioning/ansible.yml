@@ -35,11 +35,11 @@
     job: "/usr/local/bin/provision > /dev/null"
   when: system.provisioning is defined and system.provisioning == true
 
-- name: provisioning | Schedule ansible cleanup at boot
+- name: provisioning | Schedule ansible pull cleanup at boot
   tags: provisioning,ansible,ansible-cron,cron
   cron:
     name: "ansible refresh at boot"
     user: pm
     special_time: reboot
-    job: "/bin/rm -rf /home/pm/.ansible"
+    job: "/bin/rm -rf /home/pm/.ansible/pull"
   when: system.provisioning is defined and system.provisioning == true

@@ -3,4 +3,4 @@
   snap:
     name: intellij-idea-community
     classic: yes
-  when: software.intelij is defined and software.intelij == true
+  when: software.intellij is defined and software.intellij == true

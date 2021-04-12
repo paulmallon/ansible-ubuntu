@@ -1,13 +1,13 @@
 ---
 
-- name: "system setup | ufw | Allow SSH connections"
-  tags: ufw,config,system,setup
+- name: "system config | ufw | Allow SSH connections"
+  tags: ufw,config,system
   ufw:
     rule: allow
     name: OpenSSH
 
-- name: "system setup | ufw | Enable UFW and deny all other incoming traffic by default"
-  tags: ufw,config,system,setup
+- name: "system config | ufw | Enable UFW and deny all other incoming traffic by default"
+  tags: ufw,config,system
   ufw:
     state: enabled
     policy: deny

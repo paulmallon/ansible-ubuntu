@@ -40,7 +40,6 @@
       - nomad
       - lm-sensors
       - tldr
-      - pygmentize
       - dos2unix
       - libxml2-utils
 
@@ -48,3 +47,14 @@
   tags: software,common,pip
   pip:
     name: Pygments
+
+- name: "software | common | Install OpenSSH server"
+  tags: ssh-server, config, ssh
+  apt:
+    state: latest
+    cache_valid_time: '{{ apt.cachetime }}'
+    pkg:
+      - openssh-server
+  notify:
+    - restart ssh
+

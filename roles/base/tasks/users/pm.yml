@@ -132,4 +132,14 @@
   become: no
 
 
+- name: users | dotfiles | Schedule update at boot
+  tags: pm,dotfiles,users,cron
+  cron:
+    name: "dotfiles refresh at boot"
+    user: pm
+    special_time: reboot
+    job: "/usr/bin/git --git-dir={{ lookup('env','HOME') }}/.cfg/ --work-tree={{ lookup('env','HOME') }} pull"
+
+
+
 
