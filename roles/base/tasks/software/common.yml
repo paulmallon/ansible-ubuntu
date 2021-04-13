@@ -48,6 +48,13 @@
   pip:
     name: Pygments
 
+
+- name: software | common | Install aws-cli
+  tags: aws,aws-cli,common,software,snap
+  snap:
+    name: aws-cli
+    classic: yes
+
 - name: "software | common | Install OpenSSH server"
   tags: ssh-server, config, ssh
   apt:
