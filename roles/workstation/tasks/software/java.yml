@@ -1,7 +1,10 @@
 ---
 
-- name: software | java | Install OpenJDK 15
-  tags: dev, java, software
+#
+# Java 15
+#
+- name: software | java 15 | Install OpenJDK 15
+  tags: dev, java, java15, software
   apt:
     state: latest
     cache_valid_time: '{{ apt.cachetime }}'
@@ -11,4 +14,29 @@
   when: software.java is defined and software.java == true
     
     
-    
+
+#
+# Java 16
+#
+# PPA description: 
+#   https://launchpad.net/~linuxuprising/+archive/ubuntu/java
+
+- name: software | java 16 | Add PPA linuxuprising/java
+  tags: dev, java, java16, software
+  ansible.builtin.apt_repository:
+    repo: ppa:linuxuprising/java
+  when: software.java is defined and software.java == true
+
+- name: "software | java 16  | Set Oracle license to 'accepted' in debconf database"
+  tags: dev, java, java16, software
+  shell: "echo oracle-java16-installer shared/accepted-oracle-license-v1-2 select true | sudo /usr/bin/debconf-set-selections"
+  when: software.java is defined and software.java == true
+
+- name: software | java 16 | Install Oracle Java 16
+  tags: dev, java, java16, software
+  apt:
+    state: latest
+    cache_valid_time: '{{ apt.cachetime }}'
+    pkg:
+      - oracle-java16-installer
+  when: software.java is defined and software.java == true
