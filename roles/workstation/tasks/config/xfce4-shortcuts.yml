@@ -255,7 +255,7 @@
 #
 # xfce4 shortcuts - window management keybindings
 #
-- name: xfce4 | shortcut | tile_down_left_key '<Super>m'
+- name: xfce4 | shortcut | maximize_window_key '<Super>m'
   tags: pm,xfce4,users,shortcuts
   become_user: pm
   environment:
