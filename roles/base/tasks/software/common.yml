@@ -42,6 +42,7 @@
       - tldr
       - dos2unix
       - libxml2-utils
+      - inotify-tools
 
 - name: "software | common | Install common pip packages"
   tags: software,common,pip
