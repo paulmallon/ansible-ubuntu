@@ -126,20 +126,45 @@
   shell: /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME config status.showUntrackedFiles no
   become: no
 
-- name: "users | dotfiles | Force checkout repository"
-  tags: pm,dotfiles,users
-  shell: /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME checkout --force
+- name: "users | dotfiles | Create {{ lookup('env','HOME') }}/.backup directory"
+  tags: pm,dotfiles,users,test
+  ansible.builtin.file:
+    path: $HOME/.backup
+    state: directory
+    mode: '0755'
   become: no
 
+- stat: path=$HOME/.bashrc
+  tags: pm,dotfiles,users
+  register: bashrc
+  become: no
 
-- name: users | dotfiles | Schedule update at boot
+- name: "users | dotfiles | Move existing .bashrc to backup directory"
+  tags: pm,dotfiles,users
+  command: "mv -f $HOME/.bashrc $HOME/.backup"
+  become: no
+  when: bashrc.stat.isreg is defined and bashrc.stat.isreg
+
+- stat: path=$HOME/.bash_aliases
+  tags: pm,dotfiles,users
+  register: bash_aliases
+  become: no
+
+- name: "users | dotfiles | Move existing .bash_aliases to backup directory"
+  tags: pm,dotfiles,users
+  command: "mv -f $HOME/.bash_aliases $HOME/.backup"
+  become: no
+  when: bash_aliases.stat.isreg is defined and bash_aliases.stat.isreg
+
+- name: "users | dotfiles | Checkout .bashrc and .bash_aliases from branch {{ dotfiles.branch | default('main') }}"
+  tags: pm,dotfiles,users
+  shell: "/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME checkout {{ dotfiles.branch | default('main') }} $HOME/.bashrc $HOME/.bash_aliases"
+  become: no
+
+- name: users | dotfiles | Schedule update of dotfiles at boot
   tags: pm,dotfiles,users,cron
   cron:
     name: "dotfiles refresh at boot"
     user: pm
     special_time: reboot
     job: "/usr/bin/git --git-dir={{ lookup('env','HOME') }}/.cfg/ --work-tree={{ lookup('env','HOME') }} pull"
-
-
-
-

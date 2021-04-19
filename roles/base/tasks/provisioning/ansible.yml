@@ -30,8 +30,8 @@
   cron:
     name: "ansible provision"
     user: pm
-    hour: "{{ ansible_cron_hour | default('*') }}"
-    minute: "{{ ansible.ansible_cron_minute | default('*/5') }}"
+    hour: "{{ ansible.ansible_cron_hour | default('*/12') }}"
+    minute: "{{ ansible.ansible_cron_minute | default('0') }}"
     job: "/usr/local/bin/provision > /dev/null"
   when: system.provisioning is defined and system.provisioning == true
 

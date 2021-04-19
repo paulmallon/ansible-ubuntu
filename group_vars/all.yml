@@ -18,10 +18,12 @@ ssh:
   root_login: false
 dotfiles:
   repourl: git@github.com:paulmallon/cfg.git
+  branch: main
 ansible:
   repourl: git@github.com:paulmallon/ansible-ubuntu.git
   user: pm 
-  ansible_cron_minute: "*/15"
+  ansible_cron_minute: "0"
+  ansible_cron_hour: "*/12"
 software: 
   code: true
   intellij: true
