@@ -229,7 +229,7 @@
     value_type: string
     value: "xflock4"
   
-- name: xfce4 | shortcut | xfce4-terminal --window '<Super>t'
+- name: xfce4 | shortcut | xfce4-terminal '<Super>t'
   tags: pm,xfce4,users,shortcuts
   become_user: pm
   environment:
@@ -238,7 +238,7 @@
     channel: xfce4-keyboard-shortcuts
     property: "/commands/custom/<Super>t"
     value_type: string
-    value: "xfce4-terminal --window"
+    value: "xfce4-terminal"
 
 - name: xfce4 | shortcut | xfce4-terminal --drop-down 'F1'
   tags: pm,xfce4,users,shortcuts
