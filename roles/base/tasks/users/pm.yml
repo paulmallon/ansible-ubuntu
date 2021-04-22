@@ -126,10 +126,10 @@
   shell: /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME config status.showUntrackedFiles no
   become: no
 
-- name: "users | dotfiles | Create {{ lookup('env','HOME') }}/.backup directory"
+- name: "users | dotfiles | Create {{ lookup('env','HOME') }}/.config-backup directory"
   tags: pm,dotfiles,users,test
   ansible.builtin.file:
-    path: $HOME/.backup
+    path: $HOME/.config-backup
     state: directory
     mode: '0755'
   become: no
@@ -141,7 +141,7 @@
 
 - name: "users | dotfiles | Move existing .bashrc to backup directory"
   tags: pm,dotfiles,users
-  command: "mv -f $HOME/.bashrc $HOME/.backup"
+  command: "mv -f $HOME/.bashrc $HOME/.config-backup"
   become: no
   when: bashrc.stat.isreg is defined and bashrc.stat.isreg
 
@@ -152,7 +152,7 @@
 
 - name: "users | dotfiles | Move existing .bash_aliases to backup directory"
   tags: pm,dotfiles,users
-  command: "mv -f $HOME/.bash_aliases $HOME/.backup"
+  command: "mv -f $HOME/.bash_aliases $HOME/.config-backup"
   become: no
   when: bash_aliases.stat.isreg is defined and bash_aliases.stat.isreg
 
